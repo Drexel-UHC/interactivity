@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "About d3.md",
+                "file": "about d3/About d3.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "About d3.md",
+                "file": "about d3/About d3.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "About d3.md",
+                "file": "about d3/About d3.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "About d3.md"
+                "file": "about d3/About d3.md"
               }
             }
           }
@@ -146,9 +146,9 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "0513e1181a455225",
+  "active": "009a053b1aa4f778",
   "lastOpenFiles": [
-    "About d3.md",
+    "about d3/About d3.md",
     "about d3"
   ]
 }
