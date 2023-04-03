@@ -2,7 +2,9 @@ const data = [
     { country: "USA", value: 120 },
     { country: "India", value: 150 },
     { country: "Japan", value: 60 },
-    { country: "UK", value: 30 }
+    { country: "UK", value: 30 },
+    { country: "Brazil", value: 50},
+    { country: "France", value: 160}
 ];
 
   
