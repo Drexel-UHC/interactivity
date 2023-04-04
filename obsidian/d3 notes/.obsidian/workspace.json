@@ -13,13 +13,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "bar chart example d3 learnings.md",
+                "file": "JS-array-methods/About JS Array methods.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "stacked": true
       }
     ],
     "direction": "vertical"
@@ -85,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "bar chart example d3 learnings.md",
+                "file": "JS-array-methods/About JS Array methods.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "bar chart example d3 learnings.md",
+                "file": "JS-array-methods/About JS Array methods.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "bar chart example d3 learnings.md"
+                "file": "JS-array-methods/About JS Array methods.md"
               }
             }
           }
@@ -146,10 +147,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "8bfa24e6d12c8c1a",
+  "active": "009a053b1aa4f778",
   "lastOpenFiles": [
-    "about d3/About d3.md",
     "bar chart example d3 learnings.md",
+    "JS-array-methods/About JS Array methods.md",
+    "JS-array-methods",
+    "about d3/About d3.md",
     "about d3"
   ]
 }
