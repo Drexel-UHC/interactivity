@@ -4,9 +4,9 @@
 	import github from '$lib/images/github.svg';
 </script>
 
-<!-- <svelte:head>
-  <link rel="stylesheet" type="text/css" href="style.css">
-</svelte:head> -->
+<svelte:head>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</svelte:head>
 
 <header>
 	<div class="corner">
