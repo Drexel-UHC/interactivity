@@ -9,7 +9,7 @@ const config = {
 		adapter: adapter(),
 
 		files: {
-			assets: 'src/style.css'
+			assets: 'src/routes/style.css'
 		}
 	}
 };
