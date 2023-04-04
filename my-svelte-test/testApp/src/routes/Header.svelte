@@ -2,11 +2,10 @@
 	import { page } from '$app/stores';
 	import logo from '$lib/images/svelte-logo.svg';
 	import github from '$lib/images/github.svg';
+	import './styles.css';
 </script>
 
-<svelte:head>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-</svelte:head>
+
 
 <header>
 	<div class="corner">
