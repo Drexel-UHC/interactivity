@@ -2,6 +2,7 @@
 	import Counter from './Counter.svelte';
 	import welcome from '$lib/images/svelte-welcome.webp';
 	import welcome_fallback from '$lib/images/svelte-welcome.png';
+	import test_logo from '$lib/images/nike-test-shoes.png';
 </script>
 
 <svelte:head>
@@ -10,16 +11,9 @@
 </svelte:head>
 
 <section>
-	<h1>
-		<span class="welcome">
-			<picture>
-				<source srcset={welcome} type="image/webp" />
-				<img src={welcome_fallback} alt="Welcome" />
-			</picture>
-		</span>
-
-		to your new<br />SvelteKit app
-	</h1>
+	<picture>
+		<img class="mytest-nike" src={test_logo} alt="Welcome" />
+	</picture>
 
 	<h2>
 		try editing <strong>src/routes/+page.svelte</strong>
@@ -29,6 +23,10 @@
 </section>
 
 <style>
+	.mytest-nike {
+		width: 100%;
+		max-width: 200px;
+	}
 	section {
 		display: flex;
 		flex-direction: column;
