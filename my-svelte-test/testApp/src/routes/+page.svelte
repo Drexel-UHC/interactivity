@@ -2,7 +2,7 @@
 	import Counter from './Counter.svelte';
 	import welcome from '$lib/images/svelte-welcome.webp';
 	import welcome_fallback from '$lib/images/svelte-welcome.png';
-	import test_logo from '$lib/images/nike-test-shoes.png';
+	import bar_image from '$lib/images/barchart1.png';
 </script>
 
 <svelte:head>
@@ -12,7 +12,7 @@
 
 <section>
 	<picture>
-		<img class="mytest-nike" src={test_logo} alt="Welcome" />
+		<img class="mytest-nike" src={bar_image} alt="Welcome" />
 	</picture>
 
 	<h2>
