@@ -3,6 +3,8 @@
 	<meta name="description" content="About test page" />
 </svelte:head>
 
+<h1>D3 Bar Chart Example</h1>
+    <div class="chart"></div>
 <script>
     import { onMount } from 'svelte';
     import * as d3 from 'd3';
@@ -57,10 +59,4 @@
         .attr('y', 265)
         .text(d => d.country);
     });
-  </script>
-  
-  <div class="chart"></div>
-  
-
-<h1>D3 Bar Chart Example</h1>
-    <div class="chart"></div>
+</script>
