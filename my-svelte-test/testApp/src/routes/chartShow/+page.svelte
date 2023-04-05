@@ -2,6 +2,7 @@
 	import bar_image from '$lib/images/barchart1.png';
 	import pie_image from '$lib/images/piechart1.png';
 	import line_image from '$lib/images/linechart1.png';
+	import dot_image from '$lib/images/dotchart1.png';
 </script>
 
 <svelte:head>
@@ -32,8 +33,8 @@
 		</div>
 		<div class="inner-box">
 			<a href="../chart4">
-				<img class="mytest-image" src={bar_image} alt="chart 4" />
-				<h1 class="box-title">hello</h1>
+				<img class="mytest-image" src={dot_image} alt="chart 4" />
+				<h1 class="box-title">Dot Chart</h1>
 			</a>
 		</div>
 		<div class="inner-box">

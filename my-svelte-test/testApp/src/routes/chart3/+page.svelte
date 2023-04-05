@@ -3,7 +3,7 @@
 	<meta name="description" content="About test page" />
 </svelte:head>
 
-
+<h1>D3 Line Chart Example</h1>
 <script>
 	import { onMount } from 'svelte';
 	import * as d3 from 'd3';
