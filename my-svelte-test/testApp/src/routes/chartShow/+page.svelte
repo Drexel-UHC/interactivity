@@ -1,5 +1,4 @@
 <script>
-	import test_logo from '$lib/images/nike-test-shoes.png';
 	import bar_image from '$lib/images/barchart1.png';
 </script>
 
