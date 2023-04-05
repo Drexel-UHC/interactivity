@@ -10,10 +10,10 @@
 	import * as d3 from 'd3';
   
 	const data = [
-	  { label: 'Kids', value: 10 },
-	  { label: 'Teenagers', value: 20 },
+	  { label: 'Kids', value: 20 },
+	  { label: 'Teenagers', value: 40 },
 	  { label: 'Adults', value: 20 },
-	  { label: 'Parents', value: 20 },
+	  { label: 'Parents', value: 30 },
 	  { label: 'GrandParents', value: 40 },
 	];
   
@@ -42,7 +42,7 @@
 	  arcs.append('text')
 		.attr('transform', d => `translate(${arc.centroid(d)})`)
 		.attr('text-anchor', 'middle')
-		.text(d => d.data.label);
+		.text(d => `${d.data.label}: ${d.data.value}`);
 	});
 </script>
   
