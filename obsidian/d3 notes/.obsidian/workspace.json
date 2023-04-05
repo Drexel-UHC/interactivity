@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "svelte/About svelte and pros and cons to react.md",
+                "file": "JS-array-methods/About JS Array methods.md",
                 "mode": "source",
                 "source": false
               }
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "svelte/About svelte and pros and cons to react.md",
+                "file": "JS-array-methods/About JS Array methods.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "svelte/About svelte and pros and cons to react.md",
+                "file": "JS-array-methods/About JS Array methods.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "svelte/About svelte and pros and cons to react.md"
+                "file": "JS-array-methods/About JS Array methods.md"
               }
             }
           }
@@ -147,10 +147,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "009a053b1aa4f778",
+  "active": "8bfa24e6d12c8c1a",
   "lastOpenFiles": [
-    "JS-array-methods/About JS Array methods.md",
     "svelte/About svelte and pros and cons to react.md",
+    "JS-array-methods/About JS Array methods.md",
     "svelte",
     "bar chart example d3 learnings.md",
     "JS-array-methods",
