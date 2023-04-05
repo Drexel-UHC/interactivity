@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "JS-array-methods/About JS Array methods.md",
+                "file": "D3 JS Charts in svelte/Pie Chart.md",
                 "mode": "source",
                 "source": false
               }
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "JS-array-methods/About JS Array methods.md",
+                "file": "D3 JS Charts in svelte/Pie Chart.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "JS-array-methods/About JS Array methods.md",
+                "file": "D3 JS Charts in svelte/Pie Chart.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "JS-array-methods/About JS Array methods.md"
+                "file": "D3 JS Charts in svelte/Pie Chart.md"
               }
             }
           }
@@ -149,8 +149,10 @@
   },
   "active": "8bfa24e6d12c8c1a",
   "lastOpenFiles": [
-    "svelte/About svelte and pros and cons to react.md",
     "JS-array-methods/About JS Array methods.md",
+    "D3 JS Charts in svelte/Pie Chart.md",
+    "D3 JS Charts in svelte",
+    "svelte/About svelte and pros and cons to react.md",
     "svelte",
     "bar chart example d3 learnings.md",
     "JS-array-methods",
