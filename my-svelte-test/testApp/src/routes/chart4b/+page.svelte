@@ -71,6 +71,24 @@
 		.attr('text-anchor', 'middle')
 		.text('Y Label');
   
+	  const tooltip = svg.append('g')
+	    .attr('class', 'tooltip')
+	    .style('display', 'none');
+  
+	  tooltip.append('rect')
+	    .attr('width', 50)
+	    .attr('height', 20)
+	    .attr('fill', 'red')
+	    .style('opacity', 0.5);
+  
+	  tooltip.append('text')
+	    .attr('x', 25)
+	    .attr('dy', '1.2em')
+	    .style('text-anchor', 'middle')
+	    .attr('font-size', '12px')
+	    .attr('font-weight', 'bold')
+		.attr('fill', 'white');
+  
 	  svg.selectAll('circle')
 		.data(data)
 		.enter()
@@ -78,8 +96,20 @@
 		.attr('cx', d => xScale(d.x) + margin.left)
 		.attr('cy', d => yScale(d.y) + margin.top)
 		.attr('r', 7)
-		.style('fill', d => d.group === 1 ? 'red' : 'blue');
-	});
+		.style('fill', d => d.group === 1 ? 'red' : 'blue')
+	    .on('mouseover', function (event, d) {
+	      tooltip.style('display', null);
+	      tooltip.select('text').text(`(${d.x}, ${d.y})`);
+	    })
+	    .on('mouseout', function () {
+	      tooltip.style('display', 'none');
+	    })	      
+});
 </script>
-  
+
 <svg id="chart"></svg>
+
+<svg class="tooltip" style="display:none;">
+	<rect width="50" height="20" fill="white" stroke="black"></rect>
+	<text x="25" y="15" text-anchor="middle"></text>
+</svg>
