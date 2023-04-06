@@ -1,5 +1,5 @@
 <svelte:head>
-	<title>Bar Chart 4</title>
+	<title>Bar Chart 4b</title>
 	<meta name="description" content="About test page" />
 </svelte:head>
 
@@ -78,22 +78,8 @@
 		.attr('cx', d => xScale(d.x) + margin.left)
 		.attr('cy', d => yScale(d.y) + margin.top)
 		.attr('r', 7)
-		.style('fill', 'black')
-		.on('mouseover', function () {
-			d3.select(this)
-			  .transition()
-			  .duration(200)
-			  .attr('r', 10)
-			  .style('fill', 'red');
-		})
-		.on('mouseout', function () {
-			d3.select(this)
-			  .transition()
-			  .duration(200)
-			  .attr('r', 7)
-			  .style('fill', 'black');
-		});
+		.style('fill', d => d.group === 1 ? 'red' : 'blue');
 	});
 </script>
   
-<svg id="chart"></svg>	
+<svg id="chart"></svg>
