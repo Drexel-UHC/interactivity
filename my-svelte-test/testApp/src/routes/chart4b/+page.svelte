@@ -78,8 +78,8 @@
 	  tooltip.append('rect')
 	    .attr('width', 50)
 	    .attr('height', 20)
-	    .attr('fill', 'red')
-	    .style('opacity', 0.5);
+	    .attr('fill', 'green')
+	    .style('opacity', 1);
   
 	  tooltip.append('text')
 	    .attr('x', 25)
@@ -103,7 +103,12 @@
 	    })
 	    .on('mouseout', function () {
 	      tooltip.style('display', 'none');
-	    })	      
+	    })
+		.on('mousemove', function (event) {
+			const xPosition = event.pageX - 500;
+			const yPosition = event.pageY - 140;
+			tooltip.attr('transform', `translate(${xPosition}, ${yPosition})`);
+		});	      
 });
 </script>
 
