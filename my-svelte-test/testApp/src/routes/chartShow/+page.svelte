@@ -38,6 +38,12 @@
 			</a>
 		</div>
 		<div class="inner-box">
+			<a href="../chart4b">
+				<img class="mytest-image" src={dot_image} alt="chart 4b" />
+				<h1 class="box-title">Dot Chart</h1>
+			</a>
+		</div>
+		<div class="inner-box">
 			<a href="../chart5">
 				<img class="mytest-image" src={bar_image} alt="chart 5" />
 				<h1 class="box-title">hello</h1>
