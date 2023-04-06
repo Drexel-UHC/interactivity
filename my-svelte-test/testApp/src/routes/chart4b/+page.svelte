@@ -105,7 +105,7 @@
 	      tooltip.style('display', 'none');
 	    })
 		.on('mousemove', function (event) {
-			const xPosition = event.pageX - 500;
+			const xPosition = event.pageX - 450;
 			const yPosition = event.pageY - 140;
 			tooltip.attr('transform', `translate(${xPosition}, ${yPosition})`);
 		});	      
