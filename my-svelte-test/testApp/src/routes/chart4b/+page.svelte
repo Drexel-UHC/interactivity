@@ -30,9 +30,8 @@
   
 	onMount(() => {
 
-		// const svg_width = 800;
-		// const svg_height = 400;
-		// const whatever_semati_this_is = 400;
+		const svg_width = 800;
+		const svg_height = 400;
 
 	  const svg = d3.select('#chart')
 		.attr('width', svg_width)
@@ -110,17 +109,17 @@
 	    .on('mouseout', function () {
 	      tooltip.style('display', 'none');
 	    })
-		.on('mousemove', function (event) {
-			const xPosition = event.pageX - 400;
-			const yPosition = event.pageY - 140;
+		.on('mousemove', function (event, d) {
+			const xPosition = xScale(d.x) + margin.left;
+			const yPosition = yScale(d.y) + margin.top;
 			tooltip.attr('transform', `translate(${xPosition}, ${yPosition})`);
-		});	      
+		});
 });
 </script>
 
 <svg id="chart"></svg>
 
-<svg class="tooltip" style="display:none;">
+<!-- <svg class="tooltip" style="display:none;">
 	<rect width="50" height="20" fill="white" stroke="black"></rect>
 	<text x="25" y="15" text-anchor="middle"></text>
-</svg>
+</svg> -->
