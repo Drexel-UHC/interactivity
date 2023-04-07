@@ -32,7 +32,7 @@
 			</a>
 		</div>
 		<div class="inner-box">
-			<a href="../chart3">
+			<a href="../chart3b">
 				<img class="mytest-image" src={line_image} alt="chart 3b" />
 				<h1 class="box-title">Line chart B</h1>
 			</a>

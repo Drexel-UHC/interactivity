@@ -1,5 +1,5 @@
 <svelte:head>
-	<title>Bar Chart 3</title>
+	<title>Bar Chart 3b</title>
 	<meta name="description" content="About test page" />
 </svelte:head>
 
@@ -41,7 +41,8 @@
 
 		const line = d3.line()
 			.x(d => xScale(d.year))
-			.y(d => yScale(d.value));
+			.y(d => yScale(d.value))
+			.curve(d3.curveCardinal);
 
 		svg.append('path')
 			.datum(data)
