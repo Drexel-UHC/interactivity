@@ -37,7 +37,7 @@
 		.attr('width', svg_width)
 		.attr('height', svg_height);
   
-	  const margin = { top: 20, right: 20, bottom: 40, left: 50 };
+	  const margin = { top: 20, right: 80, bottom: 40, left: 80 };
 	  const width = +svg.attr('width') - margin.left - margin.right;
 	  const height = +svg.attr('height') - margin.top - margin.bottom;
   
@@ -110,8 +110,10 @@
 	      tooltip.style('display', 'none');
 	    })
 		.on('mousemove', function (event, d) {
-			const xPosition = xScale(d.x) + margin.left;
-			const yPosition = yScale(d.y) + margin.top;
+			const xOffset = 20;
+			const yOffset = 20;
+			const xPosition = xScale(d.x) + margin.left + xOffset;
+			const yPosition = yScale(d.y) + margin.top + yOffset;
 			tooltip.attr('transform', `translate(${xPosition}, ${yPosition})`);
 		});
 });
