@@ -107,13 +107,13 @@
 		}).on('mouseout', () => {
 			tooltip.style('visibility', 'hidden');
 		});
-		
+
 		svg.append('text')
 			.attr('x', 250)
 			.attr('y', 20)
 			.attr('text-anchor', 'middle')
 			.attr('font-size', '18px')
-			.text('Hello XYZ Chart');
+			.text('Chart B');
 	});
 </script>
 
