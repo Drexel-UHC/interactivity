@@ -50,7 +50,7 @@
 			.attr('stroke', 'blue')
 			.attr('fill', 'none');
 		
-		svg.selectAll('circle')
+		const circles = svg.selectAll('circle')
 			.data(data)
 			.enter()
 			.append('circle')
@@ -73,7 +73,7 @@
 		svg.append('g')
 			.attr('transform', 'translate(50, 0)')
 			.call(yAxis);
-			svg.append('text')
+		svg.append('text')
 			.attr('x', 250)
 			.attr('y', 290)
 			.attr('text-anchor', 'middle')
@@ -85,6 +85,35 @@
 			.attr('y', 20)
 			.attr('text-anchor', 'middle')
 			.text('Value');
+			
+		const tooltip = d3.select('body')
+			.append('div')
+			.attr('class', 'tooltip')
+			.style('position', 'absolute')
+			.style('z-index', '10')
+			.style('visibility', 'hidden')
+			.style('background', 'white')
+			.style('padding', '5px')
+			.style('border', '1px solid black');
+
+		circles.on('mouseover', (event, d) => {
+			tooltip.style('visibility', 'visible')
+				.html(`<strong>Year:</strong> ${d.year}<br><strong>Value:</strong> ${d.value}`)
+				.style('left', `${event.pageX + 10}px`)
+				.style('top', `${event.pageY}px`);
+		}).on('mousemove', (event) => {
+			tooltip.style('left', `${event.pageX + 10}px`)
+				.style('top', `${event.pageY}px`);
+		}).on('mouseout', () => {
+			tooltip.style('visibility', 'hidden');
+		});
+		
+		svg.append('text')
+			.attr('x', 250)
+			.attr('y', 20)
+			.attr('text-anchor', 'middle')
+			.attr('font-size', '18px')
+			.text('Hello XYZ Chart');
 	});
 </script>
 
