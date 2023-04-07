@@ -49,6 +49,15 @@
 			.attr('d', line)
 			.attr('stroke', 'blue')
 			.attr('fill', 'none');
+		
+		svg.selectAll('circle')
+			.data(data)
+			.enter()
+			.append('circle')
+			.attr('cx', d => xScale(d.year))
+			.attr('cy', d => yScale(d.value))
+			.attr('r', 4)
+			.attr('fill', 'blue');
 
 		const xAxis = d3.axisBottom(xScale)
 			.ticks(5)

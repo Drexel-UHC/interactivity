@@ -46,7 +46,7 @@
 		<div class="inner-box">
 			<a href="../chart4b">
 				<img class="mytest-image" src={dot_image} alt="chart 4b" />
-				<h1 class="box-title">Dot Chart</h1>
+				<h1 class="box-title">Dot Chart B</h1>
 			</a>
 		</div>
 		<div class="inner-box">
