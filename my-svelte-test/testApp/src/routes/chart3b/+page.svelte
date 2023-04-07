@@ -113,7 +113,7 @@
 			.attr('y', 20)
 			.attr('text-anchor', 'middle')
 			.attr('font-size', '18px')
-			.text('Chart B');
+			.text('Curved Line Chart with tooltips');
 	});
 </script>
 

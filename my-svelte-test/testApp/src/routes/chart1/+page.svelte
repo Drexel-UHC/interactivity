@@ -58,5 +58,12 @@
         .attr('x', d => xScale(d.country) + xScale.bandwidth() / 2)
         .attr('y', 265)
         .text(d => d.country);
+
+        svg.append('text')
+			.attr('x', 250)
+			.attr('y', 20)
+			.attr('text-anchor', 'middle')
+			.attr('font-size', '18px')
+			.text('Bar Chart');
     });
 </script>

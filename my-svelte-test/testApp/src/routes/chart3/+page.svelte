@@ -75,6 +75,13 @@
 			.attr('y', 20)
 			.attr('text-anchor', 'middle')
 			.text('Value');
+
+		svg.append('text')
+			.attr('x', 250)
+			.attr('y', 20)
+			.attr('text-anchor', 'middle')
+			.attr('font-size', '18px')
+			.text('Line Chart ');
 	});
 </script>
 

@@ -116,6 +116,12 @@
 			const yPosition = yScale(d.y) + margin.top + yOffset;
 			tooltip.attr('transform', `translate(${xPosition}, ${yPosition})`);
 		});
+		svg.append('text')
+			.attr('x', 250)
+			.attr('y', 20)
+			.attr('text-anchor', 'middle')
+			.attr('font-size', '18px')
+			.text('Scatter Plot chart with Tooltip');
 });
 </script>
 

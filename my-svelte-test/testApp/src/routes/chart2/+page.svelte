@@ -43,6 +43,13 @@
 		.attr('transform', d => `translate(${arc.centroid(d)})`)
 		.attr('text-anchor', 'middle')
 		.text(d => `${d.data.label}: ${d.data.value}`);
+
+	  svg.append('text')
+			.attr('x', 250)
+			.attr('y', 20)
+			.attr('text-anchor', 'middle')
+			.attr('font-size', '18px')
+			.text('Pie Chart');
 	});
 </script>
   
