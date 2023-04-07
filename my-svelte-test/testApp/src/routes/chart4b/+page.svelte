@@ -4,6 +4,7 @@
 </svelte:head>
 
 <h1>D3 Dot Chart Example</h1>
+
 <script>
 	import { onMount } from 'svelte';
 	import * as d3 from 'd3';
@@ -28,9 +29,14 @@
 	];
   
 	onMount(() => {
+
+		// const svg_width = 800;
+		// const svg_height = 400;
+		// const whatever_semati_this_is = 400;
+
 	  const svg = d3.select('#chart')
-		.attr('width', 800)
-		.attr('height', 400);
+		.attr('width', svg_width)
+		.attr('height', svg_height);
   
 	  const margin = { top: 20, right: 20, bottom: 40, left: 50 };
 	  const width = +svg.attr('width') - margin.left - margin.right;
