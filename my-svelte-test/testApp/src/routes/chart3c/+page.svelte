@@ -9,21 +9,22 @@
 	import * as d3 from 'd3';
 
 	const data = [
-		{ year: 2010, value: 10 },
-		{ year: 2011, value: 35 },
-		{ year: 2012, value: 30 },
-		{ year: 2013, value: 40 },
-		{ year: 2014, value: 15 },
-		{ year: 2015, value: 60 },
-		{ year: 2016, value: 30 },
-		{ year: 2017, value: 40 },
-		{ year: 2018, value: 30 },
-		{ year: 2019, value: 40 },
-		{ year: 2020, value: 100 },
-		{ year: 2021, value: 100 },
-		{ year: 2021, value: 40 },
-		{ year: 2022, value: 100 },
-		{ year: 2023, value: 100 },
+		{ year: 2009, value: 64, group: '1' },
+		{ year: 2010, value: 30, group: '1' },
+		{ year: 2011, value: 55, group: '1' },
+		{ year: 2012, value: 50, group: '1' },
+		{ year: 2013, value: 60, group: '1' },
+		{ year: 2014, value: 35, group: '1' },
+		{ year: 2015, value: 70, group: '1' },
+		{ year: 2016, value: 50, group: '1' },
+		{ year: 2017, value: 60, group: '2' },
+		{ year: 2018, value: 50, group: '2' },
+		{ year: 2019, value: 60, group: '2' },
+		{ year: 2020, value: 120, group: '2' },
+		{ year: 2021, value: 130, group: '2' },
+		{ year: 2021, value: 60, group: '2' },
+		{ year: 2022, value: 127, group: '2' },
+		{ year: 2023, value: 160, group: '2' },
 	];
 
 	onMount(() => {
