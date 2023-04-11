@@ -1,5 +1,5 @@
 <svelte:head>
-	<title>Bar Chart 3b</title>
+	<title>Bar Chart 3d</title>
 	<meta name="description" content="About test page" />
 </svelte:head>
 
@@ -17,6 +17,10 @@
             { x: 3, y: 60 },
             { x: 7, y: 76 },
             { x: 5, y: 30 },
+            { x: 6, y: 82 }, 
+            { x: 2, y: 71 },
+            { x: 9, y: 42 },
+            { x: 4, y: 99 },
         ] 
     },
       { 
@@ -27,13 +31,17 @@
             { x: 3, y: 50 },
             { x: 7, y: 86 },
             { x: 5, y: 90 },
+            { x: 6, y: 59 }, 
+            { x: 2, y: 39 },
+            { x: 9, y: 52 },
+            { x: 4, y: 89 },
         ] 
     },
     ];
   
     let selectedGroup = 'A';
   
-    let margin = { top: 20, right: 20, bottom: 30, left: 50 };
+    let margin = { top: 50, right: 50, bottom: 30, left: 50 };
     let width = 600 - margin.left - margin.right;
     let height = 400 - margin.top - margin.bottom;
   
@@ -147,6 +155,7 @@
 	<button on:click={() => { selectedGroup = 'A'; updateChart(); }}>Group A</button>
 	<button on:click={() => { selectedGroup = 'B'; updateChart(); }}>Group B</button>
 </div>
+<div id="tooltip" style="position: absolute; opacity: 0;"></div>
 
 <style>
 	button {

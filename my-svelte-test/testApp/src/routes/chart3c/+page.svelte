@@ -1,5 +1,5 @@
 <svelte:head>
-	<title>Bar Chart 3b</title>
+	<title>Bar Chart 3c</title>
 	<meta name="description" content="About test page" />
 </svelte:head>
 
