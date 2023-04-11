@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "JS-array-methods/About JS Array methods.md",
+                "file": "why d3 + svelte/Svelte and D3.md",
                 "mode": "source",
                 "source": false
               }
@@ -66,11 +66,13 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "1c622fb041e5bddd",
@@ -86,7 +88,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "JS-array-methods/About JS Array methods.md",
+                "file": "why d3 + svelte/Svelte and D3.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +105,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "JS-array-methods/About JS Array methods.md",
+                "file": "why d3 + svelte/Svelte and D3.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +128,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "JS-array-methods/About JS Array methods.md"
+                "file": "why d3 + svelte/Svelte and D3.md"
               }
             }
           }
@@ -149,11 +151,13 @@
   },
   "active": "8bfa24e6d12c8c1a",
   "lastOpenFiles": [
+    "JS-array-methods/About JS Array methods.md",
+    "why d3 + svelte/Svelte and D3.md",
+    "why d3 + svelte",
     "bar chart example d3 learnings.md",
     "D3 JS Charts in svelte/Pie Chart.md",
     "tasks/Untitled.md",
     "tasks",
-    "JS-array-methods/About JS Array methods.md",
     "D3 JS Charts in svelte",
     "svelte/About svelte and pros and cons to react.md",
     "svelte",
