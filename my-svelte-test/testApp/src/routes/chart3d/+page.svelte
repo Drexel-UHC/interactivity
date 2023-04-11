@@ -151,20 +151,24 @@
   
   
 <div id="chart"></div>
-<div>
-	<button on:click={() => { selectedGroup = 'A'; updateChart(); }}>Group A</button>
-	<button on:click={() => { selectedGroup = 'B'; updateChart(); }}>Group B</button>
-</div>
-<div id="tooltip" style="position: absolute; opacity: 0;"></div>
+<select on:change={e => { selectedGroup = e.target.value; updateChart(); }}>
+  <option value="A" selected={selectedGroup === 'A'}>Group A</option>
+  <option value="B" selected={selectedGroup === 'B'}>Group B</option>
+</select>
+
 
 <style>
-	button {
+	select {
 		margin: 10px;
 		padding: 10px;
 		font-size: 20px;
 		width: 100%;
-		max-width: 100px;
+		max-width: 150px;
 	}
+  option {
+    font-size: 20px;
+    text-align: center;
+  }
 </style>
   
   
