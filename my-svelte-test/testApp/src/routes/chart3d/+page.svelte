@@ -45,7 +45,8 @@
   
     let line = d3.line()
       .x(d => x(d.x))
-      .y(d => y(d.y));
+      .y(d => y(d.y))
+      .curve(d3.curveCardinal);
   
     let svg;
     let xAxisEl;
