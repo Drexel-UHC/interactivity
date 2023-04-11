@@ -33,14 +33,20 @@
 		</div>
 		<div class="inner-box">
 			<a href="../chart3b">
-				<img class="mytest-image" src={line_image} alt="chart 3b" />
+				<img class="mytest-image" src={line_image} alt="chart 3 B" />
 				<h1 class="box-title">Line chart B</h1>
 			</a>
 		</div>
 		<div class="inner-box">
 			<a href="../chart3c">
-				<img class="mytest-image" src={line_image} alt="chart 3c" />
+				<img class="mytest-image" src={line_image} alt="chart 3 C" />
 				<h1 class="box-title">Line chart C</h1>
+			</a>
+		</div>
+		<div class="inner-box">
+			<a href="../chart3d">
+				<img class="mytest-image" src={line_image} alt="chart 3 D" />
+				<h1 class="box-title">Line chart D</h1>
 			</a>
 		</div>
 		<div class="inner-box">
@@ -51,7 +57,7 @@
 		</div>
 		<div class="inner-box">
 			<a href="../chart4b">
-				<img class="mytest-image" src={dot_image} alt="chart 4b" />
+				<img class="mytest-image" src={dot_image} alt="chart 4 B" />
 				<h1 class="box-title">Dot Chart B</h1>
 			</a>
 		</div>
