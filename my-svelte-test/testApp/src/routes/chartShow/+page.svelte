@@ -3,6 +3,7 @@
 	import pie_image from '$lib/images/piechart1.png';
 	import line_image from '$lib/images/linechart1.png';
 	import dot_image from '$lib/images/dotchart1.png';
+	import force_image from '$lib/images/forcechart1.png';
 </script>
 
 <svelte:head>
@@ -63,8 +64,8 @@
 		</div>
 		<div class="inner-box">
 			<a href="../chart5">
-				<img class="mytest-image" src={bar_image} alt="chart 5" />
-				<h1 class="box-title">hello</h1>
+				<img class="mytest-image" src={force_image} alt="chart 5" />
+				<h1 class="box-title">Force D Chart</h1>
 			</a>
 		</div>
 		<div class="inner-box">
