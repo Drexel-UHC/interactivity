@@ -72,7 +72,13 @@
 		<div class="inner-box">
 			<a href="../chart6">
 				<img class="mytest-image" src={box_image} alt="chart 6" />
-				<h1 class="box-title">Box Chart</h1>
+				<h1 class="box-title">Box Plot</h1>
+			</a>
+		</div>
+		<div class="inner-box">
+			<a href="../chart6b">
+				<img class="mytest-image" src={box_image} alt="chart 6 B" />
+				<h1 class="box-title">Box Plot B</h1>
 			</a>
 		</div>
 	</div>
