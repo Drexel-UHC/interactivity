@@ -1,74 +1,95 @@
 <svelte:head>
-	<title>Boc Chart</title>
+	<title>Box Plot Chart</title>
 	<meta name="description" content="About test page" />
 </svelte:head>
 
 <script>
 	import { onMount } from 'svelte';
 	import * as d3 from 'd3';
-  
-	  const data = [
-	  { name: 'A', min: 10, q1: 15, median: 20, q3: 25, max: 30 },
-	  { name: 'B', min: 20, q1: 30, median: 40, q3: 50, max: 60 },
-	  { name: 'C', min: 30, q1: 35, median: 45, q3: 55, max: 65 },
-	];
-	export let width = 500;
-	export let height = 400;
-  
-	let svg;
 	  
+	  const data = [
+	  { group: 'A', values: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] },
+	  { group: 'B', values: [4, 5, 6, 7, 8, 9, 10, 11, 12, 13] },
+	  { group: 'C', values: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11] },
+	  { group: 'D', values: [5, 6, 7, 8, 9, 10, 11, 12, 13, 14] },
+	  { group: 'E', values: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12] }
+	];
+	  onMount(() => {
+	  const margin = { top: 20, right: 20, bottom: 30, left: 40 };
+	  const width = 600 - margin.left - margin.right;
+	  const height = 400 - margin.top - margin.bottom;
   
-	onMount(() => {
-	  drawBoxPlot();
-	});
+	  const svg = d3.select('#chart')
+		.append('svg')
+		.attr('width', width + margin.left + margin.right)
+		.attr('height', height + margin.top + margin.bottom)
+		.append('g')
+		.attr('transform', `translate(${margin.left}, ${margin.top})`);
   
-	function drawBoxPlot() {
-	const xScale = d3.scaleBand()
-	  .range([0, width])
-	  .domain(data.map(d => d.name))
-	  .padding(0.5);
+	  const x = d3.scaleBand()
+		.domain(data.map(d => d.group))
+		.range([0, width])
+		.padding(0.4);
   
-	const yScale = d3.scaleLinear()
-	  .range([height, 0])
-	  .domain([0, d3.max(data, d => d.max)]);
+	  const y = d3.scaleLinear()
+		.domain([d3.min(data, d => d3.min(d.values)), d3.max(data, d => d3.max(d.values))])
+		.range([height, 0]);
   
-	const xAxis = d3.axisBottom(xScale);
-	const yAxis = d3.axisLeft(yScale);
+	  const xAxis = d3.axisBottom(x);
+	  const yAxis = d3.axisLeft(y);
   
-	// Wrap the SVG element with a D3 selection
-	const svgSelection = d3.select(svg);
+	  svg.append('g')
+		.attr('transform', `translate(0, ${height})`)
+		.call(xAxis);
   
-	svgSelection.select('.x-axis')
-	  .call(xAxis);
+	  svg.append('g')
+		.call(yAxis);
   
-	svgSelection.select('.y-axis')
-	  .call(yAxis);
+	  svg.selectAll('.box')
+		.data(data)
+		.enter()
+		.append('rect')
+		.attr('class', 'box')
+		.attr('x', d => x(d.group))
+		.attr('y', d => y(d3.quantile(d.values, 0.75)))
+		.attr('width', x.bandwidth())
+		.attr('height', d => y(d3.quantile(d.values, 0.25)) - y(d3.quantile(d.values, 0.75)))
+		.attr('fill', (d, i) => d3.schemeCategory10[i])
+		.attr('stroke', 'blue')
+		.attr('stroke-width', 2 );
   
-	const boxes = svgSelection.selectAll('.box')
-	  .data(data);
+	 svg.selectAll('.median')
+	   .data(data)
+	   .enter()
+	   .append('line')
+	   .attr('class', 'median')
+	   .attr('x1', d => x(d.group))
+	   .attr('y1', d => y(d3.median(d.values)))
+	   .attr('x2', d => x(d.group) + x.bandwidth())
+	   .attr('y2', d => y(d3.median(d.values)));
   
-	boxes.enter()
-	  .append('rect')
-	  .attr('class', 'box')
-	  .attr('x', d => xScale(d.name))
-	  .attr('y', d => yScale(d.q3))
-	  .attr('width', xScale.bandwidth())
-	  .attr('height', d => yScale(d.q1) - yScale(d.q3))
-	  .attr('fill', 'steelblue')
-	  .attr('stroke', 'black');
+	 svg.selectAll('.whisker')
+	   .data(data)
+	   .enter()
+	   .append('line')
+	   .attr('class', 'whisker')
+	   .attr('x1', d => x(d.group))
+	   .attr('y1', d => y(d3.min(d.values)))
+	   .attr('x2', d => x(d.group) + x.bandwidth())
+	   .attr('y2', d => y(d3.min(d.values)));
   
-	boxes.exit().remove();
-  }
+	 svg.selectAll('.whisker')
+	   .data(data)
+	   .enter()
+	   .append('line')
+	   .attr('class', 'whisker')
+	   .attr('x1', d => x(d.group))
+	   .attr('y1', d => y(d3.max(d.values)))
+	   .attr('x2', d => x(d.group) + x.bandwidth())
+	   .attr('y2', d => y(d3.max(d.values)));
+   });
   
+	  
   </script>
+  <div id="chart"></div>
   
-  <style>
-	svg {
-	  font-size: 12px;
-	}
-  </style>
-  
-  <svg bind:this={svg} width={width} height={height}>
-	<g class="x-axis" transform={`translate(0,${height})`}></g>
-	<g class="y-axis"></g>
-  </svg>  
