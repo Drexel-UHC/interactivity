@@ -4,6 +4,7 @@
 	import line_image from '$lib/images/linechart1.png';
 	import dot_image from '$lib/images/dotchart1.png';
 	import force_image from '$lib/images/forcechart1.png';
+	import box_image from '$lib/images/boxchart1.png';
 </script>
 
 <svelte:head>
@@ -70,8 +71,8 @@
 		</div>
 		<div class="inner-box">
 			<a href="../chart6">
-				<img class="mytest-image" src={bar_image} alt="chart 6" />
-				<h1 class="box-title">hello</h1>
+				<img class="mytest-image" src={box_image} alt="chart 6" />
+				<h1 class="box-title">Box Chart</h1>
 			</a>
 		</div>
 	</div>

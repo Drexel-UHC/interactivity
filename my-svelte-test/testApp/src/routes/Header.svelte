@@ -28,9 +28,6 @@
 			<li aria-current={$page.url.pathname === '/chartShow' ? 'page' : undefined}>
 				<a href="/chartShow">All Charts</a>
 			</li>
-			<li aria-current={$page.url.pathname === '/charts' ? 'page' : undefined}>
-				<a href="/charts">Charts</a>
-			</li>
 		</ul>
 		<svg viewBox="0 0 2 3" aria-hidden="true">
 			<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
