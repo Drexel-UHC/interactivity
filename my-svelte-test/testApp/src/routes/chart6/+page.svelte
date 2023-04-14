@@ -66,7 +66,9 @@
 	   .attr('x1', d => x(d.group))
 	   .attr('y1', d => y(d3.median(d.values)))
 	   .attr('x2', d => x(d.group) + x.bandwidth())
-	   .attr('y2', d => y(d3.median(d.values)));
+	   .attr('y2', d => y(d3.median(d.values)))
+	   .attr("stroke", "black")
+  .attr("stroke-width", 2);
   
 	 svg.selectAll('.whisker')
 	   .data(data)
@@ -74,9 +76,11 @@
 	   .append('line')
 	   .attr('class', 'whisker')
 	   .attr('x1', d => x(d.group))
-	   .attr('y1', d => y(d3.min(d.values)))
-	   .attr('x2', d => x(d.group) + x.bandwidth())
-	   .attr('y2', d => y(d3.min(d.values)));
+	   .attr('y1', d => y(d3.quantile(d.values, 0.75)))
+	   .attr('x2', d => x(d.group))
+	   .attr('y2', d => y(d3.max(d.values)))
+	   .attr("stroke", "black")
+	.attr("stroke-width", 2);
   
 	 svg.selectAll('.whisker')
 	   .data(data)
