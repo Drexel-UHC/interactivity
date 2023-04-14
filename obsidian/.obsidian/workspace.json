@@ -11,8 +11,12 @@
             "id": "db03548ef564670f",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "zettle/D3.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ],
@@ -62,13 +66,11 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "1c622fb041e5bddd",
@@ -84,6 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "zettle/D3.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,6 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "zettle/D3.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -121,7 +125,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "zettle/D3.md"
+              }
             }
           }
         ]
@@ -133,18 +139,33 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "markdown-importer:Open format converter": false,
       "switcher:Open quick switcher": false,
       "canvas:Create new canvas": false,
       "graph:Open graph view": false,
-      "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
   "active": "db03548ef564670f",
   "lastOpenFiles": [
     "zettle/bar chart example d3 learnings.md",
-    "zettle/About d3.md",
+    "zettle/D3.md",
+    "Files/tidy data tables.png",
+    "Files/tidy data tables 1.png",
+    "Files/Pasted image 20230214144206.png",
+    "Files/Pasted image 20230214142156.png",
+    "Files/Pasted image 20230214142034.png",
+    "Files/Pasted image 20230214141734.png",
+    "Files/Pasted image 20230214141243.png",
+    "Files/Pasted image 20230214140523.png",
+    "Files/Pasted image 20230214140518.png",
+    "Files/Pasted image 20230201125304.png",
+    "Files",
+    "Templates/Core idea.md",
+    "Templates",
+    "References",
     "zettle/Pie Chart.md",
     "zettle/About JS Array methods.md",
     "zettle/About svelte and pros and cons to react.md",
@@ -162,7 +183,6 @@
     "svelte/About svelte and pros and cons to react.md",
     "svelte",
     "JS-array-methods",
-    "about d3/About d3.md",
-    "about d3"
+    "about d3/About d3.md"
   ]
 }
