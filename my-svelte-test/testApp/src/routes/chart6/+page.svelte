@@ -70,27 +70,29 @@
 	   .attr("stroke", "black")
   .attr("stroke-width", 2);
   
-	 svg.selectAll('.whisker')
+	 svg.selectAll('.upper-whisker')
 	   .data(data)
 	   .enter()
 	   .append('line')
-	   .attr('class', 'whisker')
-	   .attr('x1', d => x(d.group))
+	   .attr('class', 'upper-whisker')
+	   .attr('x1', d => x(d.group) + x.bandwidth() / 2)
 	   .attr('y1', d => y(d3.quantile(d.values, 0.75)))
-	   .attr('x2', d => x(d.group))
+	   .attr('x2', d => x(d.group) + x.bandwidth() / 2)
 	   .attr('y2', d => y(d3.max(d.values)))
 	   .attr("stroke", "black")
 	.attr("stroke-width", 2);
   
-	 svg.selectAll('.whisker')
+	 svg.selectAll('.lower-whisker')
 	   .data(data)
 	   .enter()
 	   .append('line')
-	   .attr('class', 'whisker')
-	   .attr('x1', d => x(d.group))
-	   .attr('y1', d => y(d3.max(d.values)))
-	   .attr('x2', d => x(d.group) + x.bandwidth())
-	   .attr('y2', d => y(d3.max(d.values)));
+	   .attr('class', 'lower-whisker')
+	   .attr('x1', d => x(d.group) + x.bandwidth() / 2)
+	   .attr('y1', d => y(d3.quantile(d.values, 0.25)))
+	   .attr('x2', d => x(d.group) + x.bandwidth() / 2)
+	   .attr('y2', d => y(d3.min(d.values)))
+	   .attr("stroke", "black")
+	.attr("stroke-width", 2);
    });
   
 	  
