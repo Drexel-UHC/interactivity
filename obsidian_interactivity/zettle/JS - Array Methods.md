@@ -1,3 +1,9 @@
+Date:  2023-04-14 (15:55)
+
+Status: 
+Tags:
+Links:
+
 
 #JavaScript Arrays methods are used to store and manipulate sets of data. Using these devs can perform different operations such as adding and removing elements, filtering, mapping, reducing and many more. 
 
@@ -136,3 +142,5 @@ console.log(arr); // [5, 4, 3, 2, 1]
 
 ```
 
+___
+# References

@@ -1,3 +1,9 @@
+Date:  2023-04-14 (15:54)
+
+Status: 
+Tags:
+Links:
+
 
 Svelte is a new and modern #JavaScript Framework which is more efficient way to build applications. Unlike traditional #JavaScript frameworks like React, Angular, and Vue, #svelte complies the application code more efficient during build process. This makes #svelte applications faster to load. 
 
@@ -19,3 +25,6 @@ Svelte is a new and modern #JavaScript Framework which is more efficient way to 
 
 ## #svelte offers lightweight bunder size and faster to develop as compare to #React but react offers more established ecosystem with range of resources but Eventually svelte will have more established resources eventually. 
 
+
+___
+# References

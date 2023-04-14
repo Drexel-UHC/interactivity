@@ -1,3 +1,9 @@
+Date:  2023-04-14 (15:54)
+
+Status: 
+Tags:
+Links:
+
 
 ## selectAll- to select all elemets 
 ### select - to select one element in d3,
@@ -7,3 +13,5 @@ so if we have on div we can call select for that div and have multiple items in 
 
 ## range 
 this is where we put smallest vlaue to show case chart lowest point and the highest value to show highest point [0, 100]
+___
+# References

@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "zettle/D3.md",
+                "file": "zettle/JS - Array Methods.md",
                 "mode": "source",
                 "source": false
               }
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "zettle/D3.md",
+                "file": "zettle/JS - Array Methods.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -148,10 +148,15 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "db03548ef564670f",
+  "active": "009a053b1aa4f778",
   "lastOpenFiles": [
-    "zettle/bar chart example d3 learnings.md",
+    "zettle/JS.md",
+    "zettle/JS - Array Methods.md",
     "zettle/D3.md",
+    "zettle/D3 - Bar chart.md",
+    "zettle/D3 - Pie Chart.md",
+    "zettle/Svelte.md",
+    "zettle/Svelte + D3.md",
     "Files/tidy data tables.png",
     "Files/tidy data tables 1.png",
     "Files/Pasted image 20230214144206.png",
@@ -166,10 +171,6 @@
     "Templates/Core idea.md",
     "Templates",
     "References",
-    "zettle/Pie Chart.md",
-    "zettle/About JS Array methods.md",
-    "zettle/About svelte and pros and cons to react.md",
-    "zettle/Svelte and D3.md",
     "zettle",
     "New folder",
     "why d3 + svelte/Svelte and D3.md",

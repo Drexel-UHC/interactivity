@@ -1,6 +1,10 @@
 
+Date:  2023-04-14 (15:53)
 
-#speed #accuracy #originality
+Status: 
+Tags:
+Links: [[D3]]  [[Svelte]]
+
 
 #d3 is a graphics power horse. Using #d3 it is possible to make whole website.
 
@@ -27,3 +31,6 @@ We can built different charts like sprial chart and other different chart
 
 
 
+
+___
+# References
