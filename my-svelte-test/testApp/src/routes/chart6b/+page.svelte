@@ -75,32 +75,35 @@
 		.attr("x1", d => x(d.x))
 		.attr("y1", d => y(d3.median(d.y)))
 		.attr("x2", d =>x(d.x) + x.bandwidth())
-  .attr("y2", d => y(d3.median(d.y)))
-  .attr("stroke", "black")
-  .attr("stroke-width", 2);
-		  // Draw the upper whisker
-  svg.selectAll()
-	.data(data)
-	.enter()
-	.append("line")
-	.attr("x1", d => x(d.x))
-	.attr("y1", d => y(d3.quantile(d.y, 0.75)))
-	.attr("x2", d => x(d.x))
-	.attr("y2", d => y(d3.max(d.y)))
-	.attr("stroke", "black")
-	.attr("stroke-width", 2);
-  
-  // Draw the lower whisker
-  svg.selectAll()
-	.data(data)
-	.enter()
-	.append("line")
-	.attr("x1", d => x(d.x))
-	.attr("y1", d => y(d3.quantile(d.y, 0.25)))
-	.attr("x2", d => x(d.x))
-	.attr("y2", d => y(d3.min(d.y)))
-	.attr("stroke", "black")
-	.attr("stroke-width", 2);
+		.attr("y2", d => y(d3.median(d.y)))
+		.attr("stroke", "black")
+		.attr("stroke-width", 2);
+		// Draw the upper whisker
+		svg.selectAll()
+			.data(data)
+			.enter()
+			.append("line")
+			.attr("x1", d => x(d.x) + x.bandwidth() / 2)
+			.attr("y1", d => y(d3.quantile(d.y, 0.75)))
+			.attr("x2", d => x(d.x) + x.bandwidth() / 2)
+			.attr("y2", d => y(d3.max(d.y)))
+			.attr("stroke", "black")
+			.attr("stroke-width", 2)
+			.attr("class", "whisker");
+
+		// Draw the lower whisker
+		svg.selectAll()
+			.data(data)
+			.enter()
+			.append("line")
+			.attr("x1", d => x(d.x) + x.bandwidth() / 2)
+			.attr("y1", d => y(d3.quantile(d.y, 0.25)))
+			.attr("x2", d => x(d.x) + x.bandwidth() / 2)
+			.attr("y2", d => y(d3.min(d.y)))
+			.attr("stroke", "black")
+			.attr("stroke-width", 2)
+			.attr("class", "whisker");
+
 	  }
 	  
 	  function handleSelect(event) {
