@@ -1,1 +1,0 @@
-# osidian folder here
