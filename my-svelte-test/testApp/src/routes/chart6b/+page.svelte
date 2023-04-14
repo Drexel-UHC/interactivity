@@ -4,94 +4,130 @@
 </svelte:head>
 
 <script>
-	import { onMount } from 'svelte';
-	import * as d3 from 'd3';
-	  
-	  const data = [
-	  { group: 'A', values: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] },
-	  { group: 'B', values: [4, 5, 6, 7, 8, 9, 10, 11, 12, 13] },
-	  { group: 'C', values: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11] },
-	  { group: 'D', values: [5, 6, 7, 8, 9, 10, 11, 12, 13, 14] },
-	  { group: 'E', values: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12] }
+	import * as d3 from "d3";
+	import { onMount } from "svelte";
+  
+	let selectedData = 1;
+	const data1 = [
+	  { x: 'A', y: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] },
+	  { x: 'B', y: [4, 5, 6, 7, 8, 9, 10, 11, 12, 13] },
+	  { x: 'C', y: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11] },
+	  { x: 'D', y: [5, 6, 7, 8, 9, 10, 11, 12, 13, 14] },
+	  { x: 'E', y: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12] }
 	];
-	  onMount(() => {
-	  const margin = { top: 20, right: 20, bottom: 30, left: 40 };
-	  const width = 600 - margin.left - margin.right;
+	const data2 = [
+	  { x: 'F', y: [2, 4, 6, 8, 10, 12, 14, 16, 18, 20] },
+	  { x: 'G', y: [1, 3, 5, 7, 9, 11, 13, 15, 17, 19] },
+	  { x: 'H', y: [3, 6, 9, 12, 15, 18, 21, 24, 27, 30] },
+	  { x: 'I', y: [2, 4, 6, 8, 10, 12, 14, 16, 18, 20] },
+	  { x: 'J', y: [1, 3, 5, 7, 9, 11, 13, 15, 17, 19] }
+	];
+  
+	onMount(() => {
+	  drawBoxPlot(data1);
+	});
+  
+	function drawBoxPlot(data) {
+	  d3.select("#chart svg").remove();
+  
+	  const margin = { top: 10, right: 30, bottom: 30, left: 40 };
+	  const width = 500 - margin.left - margin.right;
 	  const height = 400 - margin.top - margin.bottom;
   
-	  const svg = d3.select('#chart')
-		.append('svg')
-		.attr('width', width + margin.left + margin.right)
-		.attr('height', height + margin.top + margin.bottom)
-		.append('g')
-		.attr('transform', `translate(${margin.left}, ${margin.top})`);
+	  const svg = d3
+		.select("#chart")
+		.append("svg")
+		.attr("width", width + margin.left + margin.right)
+		.attr("height", height + margin.top + margin.bottom)
+		.append("g")
+		.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
   
-	  const x = d3.scaleBand()
-		.domain(data.map(d => d.group))
-		.range([0, width])
-		.padding(0.4);
+	  const x = d3.scaleBand().range([0, width]).domain(data.map(d => d.x));
+	  const y = d3.scaleLinear().range([height, 0]).domain([0, d3.max(data, d => d3.max(d.y))]);
   
-	  const y = d3.scaleLinear()
-		.domain([d3.min(data, d => d3.min(d.values)), d3.max(data, d => d3.max(d.values))])
-		.range([height, 0]);
+	  svg.append("g").call(d3.axisLeft(y));
+	  svg.append("g")
+		.attr("transform", "translate(0," + height + ")")
+		.call(d3.axisBottom(x));
   
-	  const xAxis = d3.axisBottom(x)
-	  .ticks(5);
-	  const yAxis = d3.axisLeft(y)
-	  .ticks(5);
+	  // Draw the box plot
+	  const boxWidth = 20;
+	  const boxColor = "#ccc";
   
-	  svg.append('g')
-		.attr('transform', `translate(0, ${height})`)
-		.call(xAxis);
-  
-	  svg.append('g')
-		.call(yAxis);
-  
-	  svg.selectAll('.box')
+	  svg.selectAll()
 		.data(data)
 		.enter()
-		.append('rect')
-		.attr('class', 'box')
-		.attr('x', d => x(d.group))
-		.attr('y', d => y(d3.quantile(d.values, 0.75)))
-		.attr('width', x.bandwidth())
-		.attr('height', d => y(d3.quantile(d.values, 0.25)) - y(d3.quantile(d.values, 0.75)))
-		.attr('fill', (d, i) => d3.schemeCategory10[i])
-		.attr('stroke', 'blue')
-		.attr('stroke-width', 2 );
+		.append("rect")
+		.attr("x", d => x(d.x) - boxWidth / 2)
+		.attr("y", d => y(d3.quantile(d.y, 0.75)))
+		.attr("height", d => y(d3.quantile(d.y, 0.25)) - y(d3.quantile(d.y, 0.75)))
+		.attr("width", boxWidth)
+		.attr("stroke", "black")
+		.attr("fill", boxColor);
   
-	 svg.selectAll('.median')
-	   .data(data)
-	   .enter()
-	   .append('line')
-	   .attr('class', 'median')
-	   .attr('x1', d => x(d.group))
-	   .attr('y1', d => y(d3.median(d.values)))
-	   .attr('x2', d => x(d.group) + x.bandwidth())
-	   .attr('y2', d => y(d3.median(d.values)));
+	  // Draw the median line
+	  svg.selectAll()
+		.data(data)
+		.enter()
+		.append("line")
+		.attr("x1", d => x(d.x) - boxWidth / 2)
+		.attr("y1", d => y(d3.median(d.y)))
+		.attr("x2", d =>x(d.x) + boxWidth / 2)
+  .attr("y2", d => y(d3.median(d.y)))
+  .attr("stroke", "black")
+  .attr("stroke-width", 2);
+		  // Draw the upper whisker
+  svg.selectAll()
+	.data(data)
+	.enter()
+	.append("line")
+	.attr("x1", d => x(d.x))
+	.attr("y1", d => y(d3.quantile(d.y, 0.75)))
+	.attr("x2", d => x(d.x))
+	.attr("y2", d => y(d3.max(d.y)))
+	.attr("stroke", "black")
+	.attr("stroke-width", 2);
   
-	 svg.selectAll('.whisker')
-	   .data(data)
-	   .enter()
-	   .append('line')
-	   .attr('class', 'whisker')
-	   .attr('x1', d => x(d.group))
-	   .attr('y1', d => y(d3.min(d.values)))
-	   .attr('x2', d => x(d.group) + x.bandwidth())
-	   .attr('y2', d => y(d3.min(d.values)));
-  
-	 svg.selectAll('.whisker')
-	   .data(data)
-	   .enter()
-	   .append('line')
-	   .attr('class', 'whisker')
-	   .attr('x1', d => x(d.group))
-	   .attr('y1', d => y(d3.max(d.values)))
-	   .attr('x2', d => x(d.group) + x.bandwidth())
-	   .attr('y2', d => y(d3.max(d.values)));
-   });
-  
+  // Draw the lower whisker
+  svg.selectAll()
+	.data(data)
+	.enter()
+	.append("line")
+	.attr("x1", d => x(d.x))
+	.attr("y1", d => y(d3.quantile(d.y, 0.25)))
+	.attr("x2", d => x(d.x))
+	.attr("y2", d => y(d3.min(d.y)))
+	.attr("stroke", "black")
+	.attr("stroke-width", 2);
+	  }
 	  
+	  function handleSelect(event) {
+	const dataSet = Number(event.target.value);
+	selectedData = dataSet;
+	if (dataSet === 1) {
+	  drawBoxPlot(data1);
+	} else {
+	  drawBoxPlot(data2);
+	}
+  }
   </script>
   <div id="chart"></div>
+  <select on:change={handleSelect}>
+	  <option value="1">Data Set 1</option>
+	  <option value="2">Data Set 2</option>
+	</select>
   
+
+<style>
+	select {
+		margin: 10px;
+		padding: 10px;
+		font-size: 20px;
+		width: 100%;
+		max-width: 150px;
+	}
+  option {
+    font-size: 20px;
+    text-align: center;
+  }
+</style>
