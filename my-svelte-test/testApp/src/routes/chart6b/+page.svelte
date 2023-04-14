@@ -35,8 +35,10 @@
 		.domain([d3.min(data, d => d3.min(d.values)), d3.max(data, d => d3.max(d.values))])
 		.range([height, 0]);
   
-	  const xAxis = d3.axisBottom(x);
-	  const yAxis = d3.axisLeft(y);
+	  const xAxis = d3.axisBottom(x)
+	  .ticks(5);
+	  const yAxis = d3.axisLeft(y)
+	  .ticks(5);
   
 	  svg.append('g')
 		.attr('transform', `translate(0, ${height})`)
