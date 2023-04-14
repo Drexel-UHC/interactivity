@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "zettle/JS - Array Methods.md",
+                "file": "zettle/Svelte - MUI.md",
                 "mode": "source",
                 "source": false
               }
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "zettle/JS - Array Methods.md",
+                "file": "zettle/Svelte - MUI.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -148,15 +148,18 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "009a053b1aa4f778",
+  "active": "db03548ef564670f",
   "lastOpenFiles": [
-    "zettle/JS.md",
-    "zettle/JS - Array Methods.md",
-    "zettle/D3.md",
-    "zettle/D3 - Bar chart.md",
-    "zettle/D3 - Pie Chart.md",
+    "zettle/Svelte - Static site generation + GH-pages.md",
     "zettle/Svelte.md",
+    "zettle/JS - Array Methods.md",
+    "zettle/D3 - Bar chart.md",
+    "zettle/Svelte - About.md",
+    "zettle/Svelte - MUI.md",
     "zettle/Svelte + D3.md",
+    "zettle/JS.md",
+    "zettle/D3.md",
+    "zettle/D3 - Pie Chart.md",
     "Files/tidy data tables.png",
     "Files/tidy data tables 1.png",
     "Files/Pasted image 20230214144206.png",

@@ -7,7 +7,7 @@ Links:
 
 ### Notes
 - [[Svelte - About]]
-- [[Svelte - Static site generation]]
+- [[Svelte - Static site generation + GH-pages]]
 - [[Svelte - MUI]]
 
 
