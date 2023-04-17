@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "zettle/Lit Review.md",
+                "file": "Templates/Core idea.md",
                 "mode": "source",
                 "source": false
               }
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "zettle/Lit Review.md",
+                "file": "Templates/Core idea.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -150,9 +150,9 @@
   },
   "active": "d9b98749061d5e4f",
   "lastOpenFiles": [
+    "zettle/Lit Review.md",
     "zettle/Lit Review - The WYSIWYG Future of Web Development and Data Visualization.md",
     "zettle/D3 - Pie Chart.md",
-    "zettle/Lit Review.md",
     "zettle/D3 - Bar chart.md",
     "zettle/Svelte - About.md",
     "zettle/Svelte.md",
