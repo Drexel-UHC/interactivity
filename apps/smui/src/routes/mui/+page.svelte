@@ -2,4 +2,4 @@
   import Drawer from "../../components/MUI/Drawer.svelte";
 </script>
 
-<Drawer/> 
+<Drawer items={['cat','dog']}/> 
