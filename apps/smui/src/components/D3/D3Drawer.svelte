@@ -5,7 +5,9 @@
   // Import Item Components
   import Cat  from "../layout/svg/Cat.svelte";
   import Bee  from "../layout/svg/Bee.svelte";
-  import LineA from './line/LineA.svelte';
+
+  // Import D3 tabs
+  import TabsetLine from "./line/TabsetLine.svelte";
 
   export let items = [];
 
@@ -28,16 +30,16 @@
 
   <AppContent class="app-content">
     <main class="main-content">
-      App content.
-      {#if clicked === "Cat"}
-        <LineA />
+  
+      {#if clicked === "Line"}
+        <TabsetLine />
+      {:else if clicked === "Cat"}
+        <Cat />
       {:else if clicked === "Bee"}
         <Bee />
       {:else}
         <p>MISSING SVG</p>
       {/if}
-      <br />
-      <pre class="status">Clicked: {clicked}</pre>
     </main>
   </AppContent>
 </div>
@@ -48,7 +50,8 @@
   .drawer-container {
     position: relative;
     display: flex;
-    height: 350px;
+    background-color: white;
+ 
 
     border: 1px solid black;
     overflow: hidden;

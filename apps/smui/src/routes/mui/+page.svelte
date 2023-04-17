@@ -3,5 +3,5 @@
  
 </script>
 
-<D3Drawer items={['Cat','Bee']} /> 
+<D3Drawer items={['Line','Cat','Bee']} /> 
  
