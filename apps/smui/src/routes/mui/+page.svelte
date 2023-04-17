@@ -1,5 +1,7 @@
 <script>
-  import Drawer from "../../components/MUI/Drawer.svelte";
+  import D3Drawer from "../../components/D3/D3Drawer.svelte";
+ 
 </script>
 
-<Drawer items={['cat','dog']}/> 
+<D3Drawer items={['Cat','Bee']} /> 
+ 
