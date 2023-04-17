@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "zettle/Svelte - MUI.md",
+                "file": "zettle/Svelte - Static site generation + GH-pages.md",
                 "mode": "source",
                 "source": false
               }
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "zettle/Svelte - MUI.md",
+                "file": "zettle/Svelte - Static site generation + GH-pages.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -150,12 +150,12 @@
   },
   "active": "db03548ef564670f",
   "lastOpenFiles": [
+    "zettle/Svelte - MUI.md",
     "zettle/Svelte - Static site generation + GH-pages.md",
     "zettle/Svelte.md",
     "zettle/JS - Array Methods.md",
     "zettle/D3 - Bar chart.md",
     "zettle/Svelte - About.md",
-    "zettle/Svelte - MUI.md",
     "zettle/Svelte + D3.md",
     "zettle/JS.md",
     "zettle/D3.md",
