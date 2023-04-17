@@ -1,5 +1,5 @@
 <script>
-  import Button from "../../components/MUI/Button.svelte";
+  import Drawer from "../../components/MUI/Drawer.svelte";
 </script>
 
-<Button/> 
+<Drawer/> 
