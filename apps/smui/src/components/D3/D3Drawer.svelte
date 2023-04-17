@@ -5,7 +5,7 @@
   // Import Item Components
   import Cat  from "../layout/svg/Cat.svelte";
   import Bee  from "../layout/svg/Bee.svelte";
-
+  import LineA from './line/LineA.svelte';
 
   export let items = [];
 
@@ -30,7 +30,7 @@
     <main class="main-content">
       App content.
       {#if clicked === "Cat"}
-        <Cat />
+        <LineA />
       {:else if clicked === "Bee"}
         <Bee />
       {:else}
