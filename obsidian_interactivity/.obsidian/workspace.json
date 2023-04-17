@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "237f99ad1e134b1b",
+        "id": "c40957ea700af3c0",
         "type": "tabs",
         "children": [
           {
-            "id": "d9b98749061d5e4f",
+            "id": "e976c87390cc401f",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Templates/Core idea.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ],
@@ -86,7 +82,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Templates/Core idea.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -148,8 +143,9 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "d9b98749061d5e4f",
+  "active": "e976c87390cc401f",
   "lastOpenFiles": [
+    "Templates/Core idea.md",
     "zettle/Lit Review.md",
     "zettle/Lit Review - The WYSIWYG Future of Web Development and Data Visualization.md",
     "zettle/D3 - Pie Chart.md",
@@ -160,7 +156,6 @@
     "zettle/D3.md",
     "zettle/JS.md",
     "zettle/Obsidian - get started.md",
-    "Templates/Core idea.md",
     "zettle/Svelte - Static site generation + GH-pages.md",
     "zettle/JS - Array Methods.md",
     "zettle/Svelte + D3.md",
