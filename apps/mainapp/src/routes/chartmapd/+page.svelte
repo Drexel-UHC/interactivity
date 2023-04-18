@@ -39,6 +39,12 @@
 		.attr('fill', 'DarkSlateBlue')
 		.attr('fill-opacity', 0.5)
 		.on('mouseover', function(event, d) {
+			d3.select(this)
+          .transition()
+          .duration(20)
+          .attr('fill', 'black')
+          .attr('fill-opacity', 1);
+			
 			const tooltip = d3.select('#tooltip');
 			tooltip.html(`County: ${d.properties.name}<br>Data: ${Math.floor(Math.random() * 100)}`);
 			tooltip.style('display', 'block');
@@ -56,10 +62,16 @@
 			tooltip.style('height', `${Math.sqrt(d.properties.value) * 5}px`);
 			})
 		.on('mouseout', function(event, d) {
-			const tooltip = d3.select('#tooltip');
-			tooltip.style('display', 'none');
-        });
-	}
+        d3.select(this)
+          .transition()
+          .duration(5000)
+          .attr('fill', 'DarkSlateBlue')
+          .attr('fill-opacity', 0.5);
+
+        const tooltip = d3.select('#tooltip');
+        tooltip.style('display', 'none');
+      });
+  }
   
 	onMount(() => {
 	  drawMap();
