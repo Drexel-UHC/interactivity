@@ -26,17 +26,17 @@
 		.enter().append('path')
 		.attr('d', path)
 		.attr('stroke', '#000')
-    .attr('stroke-width', '3px')
+    	.attr('stroke-width', '3px')
 		.attr('fill', 'none');
 
     svg.selectAll('.county')
-      .data(feature(topojsonData, topojsonData.objects.counties).features)
-      .enter().append('path')
-      .attr('class', 'county')
-      .attr('d', path)
-			.attr('stroke', 'lightblue')
-      .attr('stroke-width', '1px')
-      .attr('fill', 'none');
+		.data(feature(topojsonData, topojsonData.objects.counties).features)
+		.enter().append('path')
+		.attr('class', 'county')
+		.attr('d', path)
+		.attr('stroke', 'lightblue')
+		.attr('stroke-width', '1px')
+		.attr('fill', 'none');
 	}
   
 	onMount(() => {

@@ -30,34 +30,35 @@
 		.attr('fill', 'none');
 
     svg.selectAll('.county')
-      .data(feature(topojsonData, topojsonData.objects.counties).features)
-      .enter().append('path')
-      .attr('class', 'county')
-      .attr('d', path)
-			.attr('stroke', 'lightblue')
-      .attr('stroke-width', '1px')
-      .attr('fill', 'DarkSlateBlue')
-      .on('mouseover', function(event, d) {
-        const tooltip = d3.select('#tooltip');
-        tooltip.html(`County: ${d.properties.name}<br>Data: ${Math.floor(Math.random() * 100)}`);
-        tooltip.style('display', 'block');
-        tooltip.style('left', `${event.pageX + 10}px`);
-        tooltip.style('top', `${event.pageY - 10}px`);
-        tooltip.style('font-size', '12px');
-        tooltip.style('background-color', 'Bisque');
-        tooltip.style('padding', '5px');
-        tooltip.style('border', '1px solid black');
-        tooltip.style('border-radius', '5px');
-        tooltip.style('position', 'absolute');
-        tooltip.style('z-index', '9999');
-        tooltip.style('opacity', '1');
-        tooltip.style('width', `${Math.sqrt(d.properties.value) * 5}px`);
-	      tooltip.style('height', `${Math.sqrt(d.properties.value) * 5}px`);
-	    })
-      .on('mouseout', function(event, d) {
-        const tooltip = d3.select('#tooltip');
-        tooltip.style('display', 'none');
-      });
+		.data(feature(topojsonData, topojsonData.objects.counties).features)
+		.enter().append('path')
+		.attr('class', 'county')
+		.attr('d', path)
+		.attr('stroke', 'lightblue')
+		.attr('stroke-width', '1px')
+		.attr('fill', 'DarkSlateBlue')
+		.attr('fill-opacity', 0.5)
+		.on('mouseover', function(event, d) {
+			const tooltip = d3.select('#tooltip');
+			tooltip.html(`County: ${d.properties.name}<br>Data: ${Math.floor(Math.random() * 100)}`);
+			tooltip.style('display', 'block');
+			tooltip.style('left', `${event.pageX + 10}px`);
+			tooltip.style('top', `${event.pageY - 10}px`);
+			tooltip.style('font-size', '12px');
+			tooltip.style('background-color', 'Bisque');
+			tooltip.style('padding', '5px');
+			tooltip.style('border', '1px solid black');
+			tooltip.style('border-radius', '5px');
+			tooltip.style('position', 'absolute');
+			tooltip.style('z-index', '9999');
+			tooltip.style('opacity', '1');
+			tooltip.style('width', `${Math.sqrt(d.properties.value) * 5}px`);
+			tooltip.style('height', `${Math.sqrt(d.properties.value) * 5}px`);
+			})
+		.on('mouseout', function(event, d) {
+			const tooltip = d3.select('#tooltip');
+			tooltip.style('display', 'none');
+        });
 	}
   
 	onMount(() => {
