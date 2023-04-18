@@ -5,6 +5,7 @@
 	import dot_image from '$lib/images/dotchart1.png';
 	import force_image from '$lib/images/forcechart1.png';
 	import box_image from '$lib/images/boxchart1.png';
+	import map_image from '$lib/images/usmap1.png';
 </script>
 
 <svelte:head>
@@ -79,6 +80,12 @@
 			<a href="../chart6b">
 				<img class="mytest-image" src={box_image} alt="chart 6 B" />
 				<h1 class="box-title">Box Plot B</h1>
+			</a>
+		</div>
+		<div class="inner-box">
+			<a href="../chartMap">
+				<img class="mytest-image" src={map_image} alt="chart Map" />
+				<h1 class="box-title">Map A</h1>
 			</a>
 		</div>
 	</div>
