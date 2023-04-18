@@ -1,5 +1,5 @@
 <svelte:head>
-	<title>Map</title>
+	<title>Map A</title>
 	<meta name="description" content="map page" />
 </svelte:head>
 

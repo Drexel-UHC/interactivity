@@ -100,6 +100,12 @@
 				<h1 class="box-title">Map C</h1>
 			</a>
 		</div>
+		<div class="inner-box">
+			<a href="../chartmapd">
+				<img class="mytest-image" src={map_image} alt="chart Map" />
+				<h1 class="box-title">Map D</h1>
+			</a>
+		</div>
 	</div>
 </div>
 
