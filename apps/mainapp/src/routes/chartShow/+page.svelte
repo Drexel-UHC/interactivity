@@ -89,7 +89,7 @@
 			</a>
 		</div>
 		<div class="inner-box">
-			<a href="../chartmap">
+			<a href="../chartmapb">
 				<img class="mytest-image" src={map_image} alt="chart Map" />
 				<h1 class="box-title">Map B</h1>
 			</a>
