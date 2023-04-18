@@ -26,7 +26,7 @@
 		.enter().append('path')
 		.attr('d', path)
 		.attr('stroke', '#000')
-    .attr('stroke-width', '3px')
+    	.attr('stroke-width', '3px')
 		.attr('fill', 'none');
 
     svg.selectAll('.county')
