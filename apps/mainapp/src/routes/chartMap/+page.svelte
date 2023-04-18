@@ -1,3 +1,8 @@
+<svelte:head>
+	<title>Map</title>
+	<meta name="description" content="map page" />
+</svelte:head>
+
 <script>
 	import { onMount } from 'svelte';
 	import * as d3 from 'd3';
