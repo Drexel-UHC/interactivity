@@ -25,8 +25,8 @@
 		.data(feature(topojsonData, topojsonData.objects.states).features)
 		.enter().append('path')
 		.attr('d', path)
-		.attr('stroke', '#000')
-    	.attr('stroke-width', '3px')
+		// .attr('stroke', '#000')
+    	// .attr('stroke-width', '3px')
 		.attr('fill', 'none');
 
     svg.selectAll('.county')
@@ -36,6 +36,16 @@
 		.attr('d', path)
 		.attr('stroke', 'lightblue')
 		.attr('stroke-width', '1px')
+		.attr('fill', 'none');
+
+	svg.selectAll('.state')
+		.data(feature(topojsonData, topojsonData.objects.states).features)
+		.enter().append('path')
+		.attr('class', 'state')
+		.attr('d', path)
+		.attr('stroke', 'navy')
+		.attr('stroke-width', '2px')
+		.attr('stroke-opacity', 1)
 		.attr('fill', 'none');
 	}
   

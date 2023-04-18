@@ -25,8 +25,18 @@
 		.data(feature(topojsonData, topojsonData.objects.states).features)
 		.enter().append('path')
 		.attr('d', path)
-		.attr('stroke', '#000')
+		// .attr('stroke', '#000')
 		.attr('fill', 'none');
+
+		svg.selectAll('.state')
+			.data(feature(topojsonData, topojsonData.objects.states).features)
+			.enter().append('path')
+			.attr('class', 'state')
+			.attr('d', path)
+			.attr('stroke', 'navy')
+			.attr('stroke-width', '2px')
+			.attr('stroke-opacity', 1)
+			.attr('fill', 'none');
 	}
   
 	onMount(() => {

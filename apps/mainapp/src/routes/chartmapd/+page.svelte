@@ -25,19 +25,19 @@
 			.data(feature(topojsonData, topojsonData.objects.states).features)
 			.enter().append('path')
 			.attr('d', path)
-			.attr('stroke', '#000')
-			.attr('stroke-width', '3px')
+			// .attr('stroke', '#000')
+			// .attr('stroke-width', '3px')
 			.attr('fill', 'none');
 
-		svg.selectAll('.state')
-			.data(feature(topojsonData, topojsonData.objects.states).features)
-			.enter().append('path')
-			.attr('class', 'state') // Add class to state paths
-			.attr('d', path)
-			.attr('stroke', 'red')
-			.attr('stroke-width', '3px')
-			.attr('stroke-opacity', 1)
-			.attr('fill', 'none');
+		// svg.selectAll('.state')
+		// 	.data(feature(topojsonData, topojsonData.objects.states).features)
+		// 	.enter().append('path')
+		// 	.attr('class', 'state')
+		// 	.attr('d', path)
+		// 	.attr('stroke', 'red')
+		// 	.attr('stroke-width', '3px')
+		// 	.attr('stroke-opacity', 1)
+		// 	.attr('fill', 'none');
 
 		svg.selectAll('.county')
 			.data(feature(topojsonData, topojsonData.objects.counties).features)
@@ -80,6 +80,15 @@
         const tooltip = d3.select('#tooltip');
         tooltip.style('display', 'none');
       });
+	  svg.selectAll('.state')
+			.data(feature(topojsonData, topojsonData.objects.states).features)
+			.enter().append('path')
+			.attr('class', 'state')
+			.attr('d', path)
+			.attr('stroke', 'navy')
+			.attr('stroke-width', '2px')
+			.attr('stroke-opacity', 1)
+			.attr('fill', 'none');
   }
   
 	onMount(() => {
