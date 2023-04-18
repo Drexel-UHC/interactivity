@@ -39,7 +39,7 @@
       .attr('fill', 'none')
       .on('mouseover', function(event, d) {
         const tooltip = d3.select('#tooltip');
-        tooltip.html(`County: ${d.properties.name}`);
+        tooltip.html(`County: ${d.properties.name}<br>Data: ${Math.floor(Math.random() * 100)}`);
         tooltip.style('display', 'block');
         tooltip.style('left', `${event.pageX + 10}px`);
         tooltip.style('top', `${event.pageY - 10}px`);
