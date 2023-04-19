@@ -133,7 +133,7 @@
 			.attr('fill', 'url(#gradient)');
 
 		svg.append('text')
-			.attr('x', width - legendWidth - legendMargin)
+			.attr('x', width - legendWidth - legendMargin - 70)
 			.attr('y', legendMargin + legendHeight + 5)
 			.text('Number of Data Points')
 			.style('text-anchor', 'middle')
