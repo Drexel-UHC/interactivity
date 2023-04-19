@@ -4,18 +4,22 @@
   import Paper, { Content } from '@smui/paper';
 
   // Import D3 components
-  import LineA from './LineA.svelte';
-  import LineB from './LineB.svelte';
-  import LineC from './LineC.svelte';
-  import LineD from './LineD.svelte';
+  import MapA from './MapA.svelte';
+  import MapB from './MapB.svelte';
+  import MapC from './MapC.svelte';
+  import MapD from './MapD.svelte';
+  import MapE from './MapE.svelte';
+  import MapF from './MapF.svelte';
 
   let active = 'A';
 
   const tabs = [
-    { id: 'A', component: LineA },
-    { id: 'B', component: LineB },
-    { id: 'C', component: LineC },
-    { id: 'D', component: LineD },
+    { id: 'A', component: MapA },
+    { id: 'B', component: MapB },
+    { id: 'C', component: MapC },
+    { id: 'D', component: MapD },
+    { id: 'E', component: MapE },
+    { id: 'F', component: MapF },
   ];
   const tabNames = tabs.map((tab) => tab.id);
 </script>

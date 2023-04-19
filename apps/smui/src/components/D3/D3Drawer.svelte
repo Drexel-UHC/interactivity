@@ -8,6 +8,8 @@
 
   // Import D3 tabs
   import TabsetLine from "./line/TabsetLine.svelte";
+  import TabsetBox from "./box/TabsetBox.svelte";
+  import TabsetMap from "./map/TabsetMap.svelte";
 
   export let items = [];
 
@@ -33,10 +35,10 @@
   
       {#if clicked === "Line"}
         <TabsetLine />
-      {:else if clicked === "Cat"}
-        <Cat />
-      {:else if clicked === "Bee"}
-        <Bee />
+      {:else if clicked === "Box"}
+        <TabsetBox />
+      {:else if clicked === "Map"}
+        <TabsetMap />
       {:else}
         <p>MISSING SVG</p>
       {/if}
@@ -51,6 +53,10 @@
     position: relative;
     display: flex;
     background-color: white;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    min-width: 1400px;
  
 
     border: 1px solid black;
