@@ -11,7 +11,12 @@
   
 	const width = 960;
 	const height = 600;
-  
+	
+	const counties = feature(topojsonData, topojsonData.objects.counties).features;
+	counties.forEach(d => {
+		d.properties.data = Math.floor(Math.random() * 1000);
+	});
+
 	function drawMap() {
 	  const svg = d3.select('#map')
 		.attr('width', width)
@@ -20,6 +25,10 @@
 	  const projection = d3.geoIdentity()
 		.fitSize([width, height], feature(topojsonData, topojsonData.objects.states));
 	  const path = d3.geoPath().projection(projection);
+
+	  const colorScale = d3.scaleSequential()
+		.domain(d3.extent(counties, d => d.properties.data))
+		.interpolator(d3.interpolateBlues);
   
 	  svg.selectAll('path')
 		.data(feature(topojsonData, topojsonData.objects.states).features)
@@ -30,17 +39,17 @@
 		.attr('fill', 'none');
 
     svg.selectAll('.county')
-		.data(feature(topojsonData, topojsonData.objects.counties).features)
+		.data(counties)
 		.enter().append('path')
 		.attr('class', 'county')
 		.attr('d', path)
 		.attr('stroke', 'lightblue')
 		.attr('stroke-width', '1px')
-		.attr('fill', 'DarkSlateBlue')
+		.attr('fill', d => colorScale(d.properties.data))
 		.attr('fill-opacity', 0.5)
 		.on('mouseover', function(event, d) {
 			const tooltip = d3.select('#tooltip');
-			tooltip.html(`County: ${d.properties.name}<br>Data: ${Math.floor(Math.random() * 100)}`);
+			tooltip.html(`County: ${d.properties.name}<br>Data: ${d.properties.data}`);
 			tooltip.style('display', 'block');
 			tooltip.style('left', `${event.pageX + 10}px`);
 			tooltip.style('top', `${event.pageY - 10}px`);
