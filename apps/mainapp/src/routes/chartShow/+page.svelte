@@ -106,6 +106,18 @@
 				<h1 class="box-title">Map D</h1>
 			</a>
 		</div>
+		<div class="inner-box">
+			<a href="../chartmape">
+				<img class="mytest-image" src={map_image} alt="chart Map" />
+				<h1 class="box-title">Map E</h1>
+			</a>
+		</div>
+		<div class="inner-box">
+			<a href="../chartmapf">
+				<img class="mytest-image" src={map_image} alt="chart Map" />
+				<h1 class="box-title">Map F</h1>
+			</a>
+		</div>
 	</div>
 </div>
 
