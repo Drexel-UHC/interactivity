@@ -10,6 +10,7 @@
   import TabsetLine from "./line/TabsetLine.svelte";
   import TabsetBox from "./box/TabsetBox.svelte";
   import TabsetMap from "./map/TabsetMap.svelte";
+  import TabsetDot from "./dot/TabsetDot.svelte";
 
   export let items = [];
 
@@ -39,6 +40,8 @@
         <TabsetBox />
       {:else if clicked === "Map"}
         <TabsetMap />
+      {:else if clicked === "Dot"}
+        <TabsetDot />
       {:else}
         <p>MISSING SVG</p>
       {/if}

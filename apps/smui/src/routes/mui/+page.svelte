@@ -3,7 +3,7 @@
  
 </script>
 <div class="main-box">
-<D3Drawer items={['Line','Box','Map',]} /> 
+<D3Drawer items={['Line','Box','Map','Dot']} /> 
 </div>
 
 <style>
