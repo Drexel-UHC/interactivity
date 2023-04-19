@@ -11,6 +11,9 @@
   
 	const width = 960;
 	const height = 600;
+	const legendWidth = 200;
+	const legendHeight = 20;
+	const legendMargin = 20;
 	
 	const counties = feature(topojsonData, topojsonData.objects.counties).features;
 	counties.forEach(d => {
@@ -90,6 +93,53 @@
 			.style('font-size', '12px')
 			.style('fill', 'black')
 			.style('font-weight', 'bold');
+
+		const legend = svg.append('g')
+			.attr('transform', `translate(${width - legendWidth - legendMargin}, ${legendMargin})`);
+
+		const legendScale = d3.scaleLinear()
+			.domain(d3.extent(counties, d => d.properties.data))
+			.range([0, legendWidth]);
+
+		const legendAxis = d3.axisBottom(legendScale)
+			.ticks(5)
+			.tickSize(legendHeight);
+
+		legend.append('g')
+			.call(legendAxis)
+			.attr('transform', `translate(0, ${legendHeight})`);
+
+		const gradient = legend.append('defs')
+			.append('linearGradient')
+			.attr('id', 'gradient')
+			.attr('x1', '0%')
+			.attr('y1', '0%')
+			.attr('x2', '100%')
+			.attr('y2', '0%');
+
+		gradient.append('stop')
+			.attr('offset', '0%')
+			.attr('stop-color', colorScale.range()[0]);
+
+		gradient.append('stop')
+			.attr('offset', '100%')
+			.attr('stop-color', colorScale.range()[1]);
+
+		legend.append('rect')
+			.attr('x', 0)
+			.attr('y', 0)
+			.attr('width', legendWidth)
+			.attr('height', legendHeight)
+			.attr('fill', 'url(#gradient)');
+
+		svg.append('text')
+			.attr('x', width - legendWidth - legendMargin)
+			.attr('y', legendMargin + legendHeight + 5)
+			.text('Number of Data Points')
+			.style('text-anchor', 'middle')
+			.style('font-size', '12px')
+			.style('font-weight', 'bold');
+
 	}
   
 	onMount(() => {
