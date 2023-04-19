@@ -79,7 +79,8 @@
 			.text(d => d.properties.name)
 			.style('text-anchor', 'middle')
 			.style('font-size', '12px')
-			.style('fill', 'navy');
+			.style('fill', 'black')
+			.style('font-weight', 'bold');
 	}
   
 	onMount(() => {
