@@ -7,7 +7,7 @@
 	import { onMount } from 'svelte';
 	import * as d3 from 'd3';
 	import { feature } from 'topojson-client';
-	import topojsonData from '../../components/us-states.json';
+	import topojsonData from '../../components/us-states-new.json';
   
 	const width = 960;
 	const height = 600;
@@ -69,6 +69,17 @@
 			.attr('stroke-width', '2px')
 			.attr('stroke-opacity', 1)
 			.attr('fill', 'none');
+
+			svg.selectAll('.state-label')
+			.data(feature(topojsonData, topojsonData.objects.states).features)
+			.enter().append('text')
+			.attr('class', 'state-label')
+			.attr('x', d => path.centroid(d)[0])
+			.attr('y', d => path.centroid(d)[1])
+			.text(d => d.properties.name)
+			.style('text-anchor', 'middle')
+			.style('font-size', '12px')
+			.style('fill', 'navy');
 	}
   
 	onMount(() => {
