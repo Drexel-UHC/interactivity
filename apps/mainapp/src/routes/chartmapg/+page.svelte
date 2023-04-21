@@ -29,9 +29,15 @@
 	let colorScale;
 	
 	function updateMap() {
-		colorScale = d3.scaleSequential()
-			.domain(d3.extent(counties, d => d.properties[selectedData]))
+		if (selectedData === 'data1') {
+			colorScale = d3.scaleSequential()
+			.domain(d3.extent(counties, d => d.properties.data1))
 			.interpolator(d3.interpolateBlues);
+		} else if (selectedData === 'data2') {
+			colorScale = d3.scaleSequential()
+			.domain(d3.extent(counties, d => d.properties.data2))
+			.interpolator(d3.interpolateOranges);
+		}
 	  
 		svg.selectAll('.county')
 			.transition()
