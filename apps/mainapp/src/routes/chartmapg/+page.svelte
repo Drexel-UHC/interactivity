@@ -30,13 +30,26 @@
 	
 	function updateMap() {
 		if (selectedData === 'data1') {
-			colorScale = d3.scaleSequential()
-			.domain(d3.extent(counties, d => d.properties.data1))
-			.interpolator(d3.interpolateBlues);
-		} else if (selectedData === 'data2') {
-			colorScale = d3.scaleSequential()
-			.domain(d3.extent(counties, d => d.properties.data2))
-			.interpolator(d3.interpolateOranges);
+		colorScale = d3.scaleSequential()
+		.domain(d3.extent(counties, d => d.properties.data1))
+		.interpolator(d3.interpolateBlues);
+		
+		// set color of gradient to match color scale
+		const colorGradient = d3.select('#colorGradient');
+		colorGradient.select('stop:nth-child(1)').attr('stop-color', '#f7fbff');
+		colorGradient.select('stop:nth-child(2)').attr('stop-color', '#4292c6');
+		colorGradient.select('stop:nth-child(3)').attr('stop-color', '#08306b');
+		}
+		else if (selectedData === 'data2') {
+		colorScale = d3.scaleSequential()
+		.domain(d3.extent(counties, d => d.properties.data2))
+		.interpolator(d3.interpolateOranges);
+		
+		// set color of gradient to match color scale
+		const colorGradient = d3.select('#colorGradient');
+		colorGradient.select('stop:nth-child(1)').attr('stop-color', '#fff5eb');
+		colorGradient.select('stop:nth-child(2)').attr('stop-color', '#fd8d3c');
+		colorGradient.select('stop:nth-child(3)').attr('stop-color', '#e6550d');
 		}
 	  
 		svg.selectAll('.county')
@@ -122,6 +135,19 @@
 </script>
 
 <svg id="map"></svg>
+<svg id="legend" width="200" height="60">
+	<rect x="10" y="10" width="180" height="20" fill="url(#colorGradient)" />
+	<text x="10" y="50">Low</text>
+	<text x="160" y="50">High</text>
+	<defs>
+		<linearGradient id="colorGradient">
+			<stop offset="0%" stop-color="#f7fbff" />
+			<stop offset="50%" stop-color="#4292c6" />
+			<stop offset="100%" stop-color="#08306b" />
+		</linearGradient>
+	</defs>
+</svg>
+
 <div id="tooltip"></div>
 
 <select id="data-select" bind:value={selectedData} on:change={updateMap}>
