@@ -124,6 +124,12 @@
 				<h1 class="box-title">Map G</h1>
 			</a>
 		</div>
+		<div class="inner-box">
+			<a href="../chartmaph">
+				<img class="mytest-image" src={map_image} alt="chart Map" />
+				<h1 class="box-title">Map H</h1>
+			</a>
+		</div>
 	</div>
 </div>
 
