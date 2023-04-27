@@ -73,7 +73,6 @@
 </script>
 
 <svg id="map"></svg>
-
 <select bind:value={selectedState}>
 	<option value="All States">All States</option>
 	<option value="Texas">Texas</option>
@@ -83,3 +82,19 @@
 	<option value="Florida">Florida</option>
 	<option value="Illinois">Illinois</option>
 </select>
+<style>
+	select {
+		margin: 10px;
+		padding: 10px;
+		font-size: 20px;
+		width: 100%;
+		max-width: 200px;
+		border-radius: 10px;
+		border: 2px solid DeepSkyBlue;
+		background-color: lightblue;
+	}
+	option {
+		font-size: 20px;
+		text-align: center;
+	}
+</style>
