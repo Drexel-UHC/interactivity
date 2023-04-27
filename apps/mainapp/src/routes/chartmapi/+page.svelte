@@ -12,10 +12,10 @@
 	const width = 960;
 	const height = 600;
 	const counties = feature(topojsonData, topojsonData.objects.counties).features;
-  
+
 	let selectedState = 'All States';
 	let projection;
-  
+
 	const zoomToState = (state) => {
 	  if (state === 'All States') {
 		projection = d3.geoIdentity().fitSize([width, height], feature(topojsonData, topojsonData.objects.states));
@@ -40,11 +40,9 @@
 		const projection = d3.geoIdentity()
 			.fitSize([width, height], feature(topojsonData, topojsonData.objects.states));
 		const path = d3.geoPath().projection(projection);
-  
 		// const colorScale = d3.scaleSequential()
 		// 	.domain(d3.extent(counties, d => d.properties.data))
 		// 	.interpolator(d3.interpolateBlues);
-	
 		svg.selectAll('path')
 			.data(feature(topojsonData, topojsonData.objects.states).features)
 			.enter().append('path')
@@ -63,7 +61,6 @@
 			.attr('stroke-opacity', 1)
 			.attr('fill', 'none');
 	}
-  
 	onMount(() => {
 	  drawMap();
 	});
