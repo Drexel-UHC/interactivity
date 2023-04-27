@@ -40,9 +40,7 @@
 		const projection = d3.geoIdentity()
 			.fitSize([width, height], feature(topojsonData, topojsonData.objects.states));
 		const path = d3.geoPath().projection(projection);
-		// const colorScale = d3.scaleSequential()
-		// 	.domain(d3.extent(counties, d => d.properties.data))
-		// 	.interpolator(d3.interpolateBlues);
+
 		svg.selectAll('path')
 			.data(feature(topojsonData, topojsonData.objects.states).features)
 			.enter().append('path')
@@ -64,13 +62,10 @@
 	onMount(() => {
 	  drawMap();
 	});
-	$: {
-	  zoomToState(selectedState);
-	}
 </script>
 
 <svg id="map"></svg>
-<select bind:value={selectedState}>
+<select bind:value={selectedState} on:change={() => zoomToState(selectedState)}>
 	<option value="All States">All States</option>
 	<option value="Texas">Texas</option>
 	<option value="California">California</option>
@@ -78,7 +73,7 @@
 	<option value="New York">New York</option>
 	<option value="Florida">Florida</option>
 	<option value="Illinois">Illinois</option>
-</select>
+  </select>
 <style>
 	select {
 		margin: 10px;
