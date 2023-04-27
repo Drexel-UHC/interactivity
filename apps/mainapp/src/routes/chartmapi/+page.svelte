@@ -11,37 +11,49 @@
   
 	const width = 960;
 	const height = 600;
-	
 	const counties = feature(topojsonData, topojsonData.objects.counties).features;
+  
+	let selectedState = 'All States';
+	let projection;
+  
+	const zoomToState = (state) => {
+	  if (state === 'All States') {
+		projection = d3.geoIdentity().fitSize([width, height], feature(topojsonData, topojsonData.objects.states));
+	  } else {
+		const stateFeature = feature(topojsonData, topojsonData.objects.states).features.find(f => f.properties.name === state);
+		projection = d3.geoIdentity().fitSize([width, height], stateFeature);
+	  }
+  
+	  const path = d3.geoPath().projection(projection);
+  
+	  d3.selectAll('.state')
+		.transition()
+		.duration(750)
+		.attr('d', path)
+		.attr('fill', 'lightblue');
+	};
+  
 	function drawMap() {
-		const svg = d3.select('#map')
+	  	const svg = d3.select('#map')
 			.attr('width', width)
 			.attr('height', height);
-  
+	
 		const projection = d3.geoIdentity()
 			.fitSize([width, height], feature(topojsonData, topojsonData.objects.states));
 		const path = d3.geoPath().projection(projection);
-
+  
 		const colorScale = d3.scaleSequential()
 			.domain(d3.extent(counties, d => d.properties.data))
 			.interpolator(d3.interpolateBlues);
-  
+	
 		svg.selectAll('path')
 			.data(feature(topojsonData, topojsonData.objects.states).features)
 			.enter().append('path')
 			.attr('d', path)
 			.attr('fill', 'none');
-
-		svg.selectAll('.county')
-			.data(counties)
-			.enter().append('path')
-			.attr('class', 'county')
-			.attr('d', path)
-			.attr('stroke', 'Crimson')
-			.attr('stroke-width', '1px')
-			.attr('fill', 'salmon')
-			.attr('fill-opacity', 0.5)
-
+  
+	  	zoomToState(selectedState);
+  
 		svg.selectAll('.state')
 			.data(feature(topojsonData, topojsonData.objects.states).features)
 			.enter().append('path')
@@ -51,25 +63,24 @@
 			.attr('stroke-width', '2px')
 			.attr('stroke-opacity', 1)
 			.attr('fill', 'none');
-
-			svg.selectAll('.state-label')
-			.data(feature(topojsonData, topojsonData.objects.states).features)
-			.enter().append('text')
-			.attr('class', 'state-label')
-			.attr('x', d => path.centroid(d)[0])
-			.attr('y', d => path.centroid(d)[1])
-			.text(d => d.properties.name)
-			.style('text-anchor', 'middle')
-			.style('font-size', '12px')
-			.style('fill', 'black')
-			.style('font-weight', 'bold');
 	}
   
 	onMount(() => {
 	  drawMap();
 	});
+	$: {
+	  zoomToState(selectedState);
+	}
 </script>
 
 <svg id="map"></svg>
 
-<div id="tooltip" style="display: none;"></div>
+<select bind:value={selectedState}>
+	<option value="All States">All States</option>
+	<option value="Texas">Texas</option>
+	<option value="California">California</option>
+	<option value="Utah">Utah</option>
+	<option value="New York">New York</option>
+	<option value="Florida">Florida</option>
+	<option value="Illinois">Illinois</option>
+</select>
