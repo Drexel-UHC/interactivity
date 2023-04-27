@@ -12,28 +12,35 @@
 	const width = 960;
 	const height = 600;
 	const counties = feature(topojsonData, topojsonData.objects.counties).features;
-
+  
 	let selectedState = 'All States';
 	let projection;
-
+  
 	const zoomToState = (state) => {
-	  if (state === 'All States') {
-		projection = d3.geoIdentity().fitSize([width, height], feature(topojsonData, topojsonData.objects.states));
-	  } else {
-		const stateFeature = feature(topojsonData, topojsonData.objects.states).features.find(f => f.properties.name === state);
-		projection = d3.geoIdentity().fitSize([width, height], stateFeature);
-	  }
+		if (state === 'All States') {
+			projection = d3.geoIdentity().fitSize([width, height], feature(topojsonData, topojsonData.objects.states));
+			d3.selectAll('.county').style('display', 'none');
+		} else {
+			const stateFeature = feature(topojsonData, topojsonData.objects.states).features.find(f => f.properties.name === state);
+			projection = d3.geoIdentity().fitSize([width, height], stateFeature);
+			d3.selectAll('.county').style('display', null);
+		}
+
+	  	const path = d3.geoPath().projection(projection);
   
-	  const path = d3.geoPath().projection(projection);
-  
-	  d3.selectAll('.state')
-		.transition()
-		.duration(750)
-		.attr('d', path);
+		d3.selectAll('.state')
+			.transition()
+			.duration(750)
+			.attr('d', path);
+
+		d3.selectAll('.county')
+			.transition()
+			.duration(750)
+			.attr('d', path);
 	};
   
 	function drawMap() {
-	  	const svg = d3.select('#map')
+		const svg = d3.select('#map')
 			.attr('width', width)
 			.attr('height', height);
 	
@@ -41,15 +48,18 @@
 			.fitSize([width, height], feature(topojsonData, topojsonData.objects.states));
 		const path = d3.geoPath().projection(projection);
 
-		svg.selectAll('path')
-			.data(feature(topojsonData, topojsonData.objects.states).features)
+	  	svg.selectAll('.county')
+			.data(counties)
 			.enter().append('path')
+			.attr('class', 'county')
 			.attr('d', path)
-			.attr('fill', 'none');
+			.attr('stroke', 'gray')
+			.attr('stroke-width', '1px')
+			.attr('stroke-opacity', 1)
+			.attr('fill', 'none')
+			.style('display', 'none');
   
-	  	zoomToState(selectedState);
-  
-		svg.selectAll('.state')
+	  	svg.selectAll('.state')
 			.data(feature(topojsonData, topojsonData.objects.states).features)
 			.enter().append('path')
 			.attr('class', 'state')
@@ -58,6 +68,8 @@
 			.attr('stroke-width', '2px')
 			.attr('stroke-opacity', 1)
 			.attr('fill', 'none');
+		
+		zoomToState(selectedState);
 	}
 	onMount(() => {
 	  drawMap();
