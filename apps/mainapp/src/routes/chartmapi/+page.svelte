@@ -29,8 +29,7 @@
 	  d3.selectAll('.state')
 		.transition()
 		.duration(750)
-		.attr('d', path)
-		.attr('fill', 'lightblue');
+		.attr('d', path);
 	};
   
 	function drawMap() {
@@ -42,9 +41,9 @@
 			.fitSize([width, height], feature(topojsonData, topojsonData.objects.states));
 		const path = d3.geoPath().projection(projection);
   
-		const colorScale = d3.scaleSequential()
-			.domain(d3.extent(counties, d => d.properties.data))
-			.interpolator(d3.interpolateBlues);
+		// const colorScale = d3.scaleSequential()
+		// 	.domain(d3.extent(counties, d => d.properties.data))
+		// 	.interpolator(d3.interpolateBlues);
 	
 		svg.selectAll('path')
 			.data(feature(topojsonData, topojsonData.objects.states).features)
