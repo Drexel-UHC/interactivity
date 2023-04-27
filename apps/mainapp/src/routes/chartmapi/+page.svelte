@@ -75,7 +75,7 @@
 			.attr('class', 'state-label')
 			.attr('x', 20)
 			.attr('y', 20)
-			.attr('fill', 'black')
+			.attr('fill', 'darkred')
 			.attr('font-size', 20)
 			.attr('font-weight', 'bold');
 
