@@ -20,10 +20,12 @@
 		if (state === 'All States') {
 			projection = d3.geoIdentity().fitSize([width, height], feature(topojsonData, topojsonData.objects.states));
 			d3.selectAll('.county').style('display', 'none');
+			d3.select('.state-label').text('');
 		} else {
 			const stateFeature = feature(topojsonData, topojsonData.objects.states).features.find(f => f.properties.name === state);
 			projection = d3.geoIdentity().fitSize([width, height], stateFeature);
 			d3.selectAll('.county').style('display', null);
+			d3.select('.state-label').text(state);
 		}
 
 	  	const path = d3.geoPath().projection(projection);
@@ -69,6 +71,14 @@
 			.attr('stroke-opacity', 1)
 			.attr('fill', 'none');
 		
+		svg.append('text')
+			.attr('class', 'state-label')
+			.attr('x', 20)
+			.attr('y', 20)
+			.attr('fill', 'black')
+			.attr('font-size', 20)
+			.attr('font-weight', 'bold');
+
 		zoomToState(selectedState);
 	}
 	onMount(() => {
