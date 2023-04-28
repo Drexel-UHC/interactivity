@@ -18,7 +18,15 @@
   
 	let selectedState = 'All States';
 	let projection;
-	let stateColor = 'lightgray';
+	let stateColor = 'indigo';
+	
+	function associateCountiesWithStates(counties, states) {
+		const stateById = new Map(states.features.map(d => [d.id, d.properties.name]));
+		counties.forEach(county => {
+			county.properties.state = stateById.get(county.id.slice(0, 2));
+		});
+		}
+
   
 	const zoomToState = (state) => {
 		if (state === 'All States') {
@@ -27,12 +35,12 @@
 			d3.select('.state-label').text('');
 		} else {
 			const stateFeature = feature(topojsonData, topojsonData.objects.states).features.find(f => f.properties.name === state);
-			projection = d3.geoIdentity().fitSize([width, height], stateFeature);
-			d3.selectAll('.county').style('display', null);
-			d3.select('.state-label').text(state);
+    		projection = d3.geoIdentity().fitSize([width, height], stateFeature);
+    		d3.selectAll('.county').style('display', (d) => d.properties.state === state ? null : 'none');
+    		d3.select('.state-label').text(state);
 		}
 		if (state !== 'All States') {
-			stateColor = 'Indigo';
+			stateColor = 'indigo';
 		}
 
 	  	const path = d3.geoPath().projection(projection);
@@ -87,7 +95,7 @@
 			.attr('stroke-width', '1px')
 			.attr('stroke-opacity', 1)
 			.attr('fill', d => colorScale(d.properties.data))
-			.attr('fill-opacity', 0.2)
+			.attr('fill-opacity', 1)
 			.style('display', 'none')
 			.on('mouseover', function(event, d) {
 			const tooltip = d3.select('#tooltip');
@@ -122,7 +130,8 @@
 		zoomToState(selectedState);
 	}
 	onMount(() => {
-	  drawMap();
+		associateCountiesWithStates(counties, feature(topojsonData, topojsonData.objects.states));
+		drawMap();
 	});
 </script>
 
