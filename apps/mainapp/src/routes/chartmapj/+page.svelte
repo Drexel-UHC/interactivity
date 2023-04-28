@@ -15,6 +15,7 @@
   
 	let selectedState = 'All States';
 	let projection;
+	let stateColor = 'lightgray';
   
 	const zoomToState = (state) => {
 		if (state === 'All States') {
@@ -27,13 +28,23 @@
 			d3.selectAll('.county').style('display', null);
 			d3.select('.state-label').text(state);
 		}
+		if (state !== 'All States') {
+			stateColor = 'Indigo';
+		}
 
 	  	const path = d3.geoPath().projection(projection);
   
 		d3.selectAll('.state')
 			.transition()
 			.duration(750)
-			.attr('d', path);
+		    .attr('d', path)
+			.attr('fill', (d) => {
+			if (d.properties.name === state) {
+				return stateColor;
+			} else {
+				return 'salmon';
+			}
+			});
 
 		d3.selectAll('.county')
 			.transition()
@@ -50,18 +61,7 @@
 			.fitSize([width, height], feature(topojsonData, topojsonData.objects.states));
 		const path = d3.geoPath().projection(projection);
 
-	  	svg.selectAll('.county')
-			.data(counties)
-			.enter().append('path')
-			.attr('class', 'county')
-			.attr('d', path)
-			.attr('stroke', 'gray')
-			.attr('stroke-width', '1px')
-			.attr('stroke-opacity', 1)
-			.attr('fill', 'none')
-			.style('display', 'none');
-  
-	  	svg.selectAll('.state')
+		svg.selectAll('.state')
 			.data(feature(topojsonData, topojsonData.objects.states).features)
 			.enter().append('path')
 			.attr('class', 'state')
@@ -70,6 +70,17 @@
 			.attr('stroke-width', '2px')
 			.attr('stroke-opacity', 1)
 			.attr('fill', 'none');
+
+		svg.selectAll('.county')
+			.data(counties)
+			.enter().append('path')
+			.attr('class', 'county')
+			.attr('d', path)
+			.attr('stroke', 'coral')
+			.attr('stroke-width', '1px')
+			.attr('stroke-opacity', 1)
+			.attr('fill', 'none')
+			.style('display', 'none');
 		
 		svg.append('text')
 			.attr('class', 'state-label')
