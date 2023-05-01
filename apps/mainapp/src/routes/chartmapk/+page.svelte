@@ -139,5 +139,31 @@
 	});
 </script>
 
+<div class="button-box">
+	<button on:click={() => {selectedState = 'All States';zoomToState(selectedState);}}>Show all states</button>
+</div>
 <svg id="map"></svg>
 <div id="tooltip" style="display: none;"></div>
+
+<style>
+	button {
+		margin: 5px;
+		padding: 10px;
+		font-size: 20px;
+		width: 100%;
+		max-width: 200px;
+		border-radius: 10px;
+		border: 2px solid DeepSkyBlue;
+		background-color: lightblue;
+		cursor: pointer;
+	}
+	button:hover {
+		background-color: DeepSkyBlue;
+		color: white;
+	}
+	.button-box {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+</style>
