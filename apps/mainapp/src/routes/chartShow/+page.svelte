@@ -142,6 +142,12 @@
 				<h1 class="box-title">Map J</h1>
 			</a>
 		</div>
+		<div class="inner-box">
+			<a href="../chartmapk">
+				<img class="mytest-image" src={map_image} alt="chart Map" />
+				<h1 class="box-title">Map K</h1>
+			</a>
+		</div>
 	</div>
 </div>
 
