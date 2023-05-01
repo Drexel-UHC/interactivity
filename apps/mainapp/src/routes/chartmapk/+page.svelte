@@ -85,6 +85,27 @@
 			.attr('stroke-width', '2px')
 			.attr('stroke-opacity', 1)
 			.attr('fill', 'none')
+			.on('mouseover', function(event, d) {
+			const statetooltip = d3.select('#statetooltip');
+			statetooltip.html(`State: ${d.properties.name}`);
+			statetooltip.style('display', 'block');
+			statetooltip.style('left', `${event.pageX + 10}px`);
+			statetooltip.style('top', `${event.pageY - 10}px`);
+			statetooltip.style('text-align', 'center');
+			statetooltip.style('font-size', '20px');
+			statetooltip.style('background-color', 'lavender');
+			statetooltip.style('padding', '5px');
+			statetooltip.style('border', '2px solid DarkOrchid');
+			statetooltip.style('border-radius', '10px');
+			statetooltip.style('position', 'absolute');
+			statetooltip.style('z-index', '9999');
+			statetooltip.style('opacity', '1');
+			statetooltip.style('width', `${d.properties.name.length * 20}px`);
+			})
+			.on('mouseout', function(event, d) {
+			const statetooltip = d3.select('#statetooltip');
+			statetooltip.style('display', 'none');
+        	})
 			.on('click', function(event, d) {
 			const stateName = d.properties.name;
 			zoomToState(stateName);
@@ -144,6 +165,7 @@
 </div>
 <svg id="map"></svg>
 <div id="tooltip" style="display: none;"></div>
+<div id="statetooltip" style="display: none;"></div>
 
 <style>
 	button {
@@ -153,13 +175,14 @@
 		width: 100%;
 		max-width: 200px;
 		border-radius: 10px;
-		border: 2px solid DeepSkyBlue;
-		background-color: lightblue;
+		border: 2px solid SlateBlue;
+		background-color: Indigo;
+		color: white;
 		cursor: pointer;
 	}
 	button:hover {
-		background-color: DeepSkyBlue;
-		color: white;
+		background-color: SlateBlue;
+		border: 2px solid Indigo;
 	}
 	.button-box {
 		display: flex;
