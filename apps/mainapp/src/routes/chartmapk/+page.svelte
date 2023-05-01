@@ -141,19 +141,3 @@
 
 <svg id="map"></svg>
 <div id="tooltip" style="display: none;"></div>
-<style>
-	select {
-		margin: 10px;
-		padding: 10px;
-		font-size: 20px;
-		width: 100%;
-		max-width: 200px;
-		border-radius: 10px;
-		border: 2px solid DeepSkyBlue;
-		background-color: lightblue;
-	}
-	option {
-		font-size: 20px;
-		text-align: center;
-	}
-</style>
