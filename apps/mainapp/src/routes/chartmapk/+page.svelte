@@ -84,7 +84,11 @@
 			.attr('stroke', 'navy')
 			.attr('stroke-width', '2px')
 			.attr('stroke-opacity', 1)
-			.attr('fill', 'none');
+			.attr('fill', 'none')
+			.on('click', function(event, d) {
+			const stateName = d.properties.name;
+			zoomToState(stateName);
+			});
 
 		svg.selectAll('.county')
 			.data(counties)
@@ -137,15 +141,6 @@
 
 <svg id="map"></svg>
 <div id="tooltip" style="display: none;"></div>
-<select bind:value={selectedState} on:change={() => zoomToState(selectedState)}>
-	<option value="All States">All States</option>
-	<option value="Texas">Texas</option>
-	<option value="California">California</option>
-	<option value="Utah">Utah</option>
-	<option value="New York">New York</option>
-	<option value="Florida">Florida</option>
-	<option value="Illinois">Illinois</option>
-  </select>
 <style>
 	select {
 		margin: 10px;
