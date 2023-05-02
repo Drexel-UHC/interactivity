@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "zettle/GSAP.md",
+                "file": "zettle/GSAP - ScrollTrigers.md",
                 "mode": "source",
                 "source": false
               }
@@ -65,6 +65,14 @@
               "type": "starred",
               "state": {}
             }
+          },
+          {
+            "id": "8ae43f9629e5d409",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
           }
         ]
       }
@@ -86,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "zettle/GSAP.md",
+                "file": "zettle/GSAP - ScrollTrigers.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -150,9 +158,9 @@
   },
   "active": "e976c87390cc401f",
   "lastOpenFiles": [
+    "zettle/GSAP.md",
     "zettle/GSAP - ScrollTrigers.md",
     "zettle/Svelte - MUI.md",
-    "zettle/GSAP.md",
     "zettle/JS.md",
     "zettle/D3 - Bar chart.md",
     "zettle/D3 - Pie Chart.md",
