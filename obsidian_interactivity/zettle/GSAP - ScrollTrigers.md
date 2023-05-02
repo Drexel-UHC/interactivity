@@ -20,3 +20,6 @@ Different #GSAP #scrolltriggers
 
 #### **Markers** are special points in the timeline that can be used to label specific frames or positions in an animation. Markers can be added to the timeline using the `addLabel()` method
 
+#### **pinning** refers to the ability to fix an element to a specific position in the viewport while animating it. This is typically used in scroll-based animations where an element needs to remain fixed relative to the viewport as the user scrolls.
+
+#### **snapping** refers to the ability to create animations that "snap" to specific positions or values. This is often used in scroll-based animations or in user interface (UI) animations where elements need to snap into place when interacting with the UI
