@@ -28,12 +28,23 @@ const buildingColors = [0xFF0000, 0x00FF00, 0x0000FF, 0xFFFF00, 0xFF00FF, 0x00FF
 
 for (let i = 0; i < citySize; i++) {
     for (let j = 0; j < citySize; j++) {
-        const height = Math.random() * 10 + 5;
+        let height;
+
+        // Generate a random number between 0 and 1
+        const skyscraperChance = Math.random();
+
+        if (skyscraperChance < 0.9) {
+          // 90% chance to generate a normal building
+          height = Math.random() * 10 + 5;
+        } else {
+          // 10% chance to generate a skyscraper
+          height = Math.random() * 40 + 40;
+        }
+
         const color = buildingColors[Math.floor(Math.random() * buildingColors.length)];
         createBuilding(i * 15 - (citySize * 7.5), 0, j * 15 - (citySize * 7.5), 10, height, 10, color);
     }
 }
-
 camera.position.set(citySize * 7.5, citySize * 3, citySize * 12);
 camera.lookAt(scene.position);
 
