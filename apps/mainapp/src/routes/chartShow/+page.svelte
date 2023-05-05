@@ -149,6 +149,12 @@
 			</a>
 		</div>
 		<div class="inner-box">
+			<a href="../scrolly-template">
+				<img class="mytest-image" src={map_image} alt="chart Map" />
+				<h1 class="box-title">Scrolly-template</h1>
+			</a>
+		</div>
+		<div class="inner-box">
 			<a href="../scrolly1">
 				<img class="mytest-image" src={map_image} alt="chart Map" />
 				<h1 class="box-title">Scrolly</h1>
