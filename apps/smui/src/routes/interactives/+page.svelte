@@ -1,13 +1,7 @@
 <script>
   import Card, {
-    Content,
     PrimaryAction,
-    Actions,
-    ActionButtons,
-    ActionIcons,
   } from '@smui/card';
-  import Button, { Label } from '@smui/button';
-  import IconButton, { Icon } from '@smui/icon-button';
 </script>
 
 
