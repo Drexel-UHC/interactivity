@@ -19,10 +19,12 @@
 		"@smui/button": "^7.0.0-beta.3",
 		"@smui/card": "^7.0.0-beta.3",
 		"@smui/drawer": "^7.0.0-beta.3",
+		"@smui/icon-button": "^7.0.0-beta.8",
 		"@smui/list": "^7.0.0-beta.3",
 		"@smui/paper": "^7.0.0-beta.3",
 		"@smui/tab": "^7.0.0-beta.3",
 		"@smui/tab-bar": "^7.0.0-beta.3",
+		"@smui/top-app-bar": "^7.0.0-beta.8",
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/adapter-static": "^2.0.2",
 		"@sveltejs/kit": "^1.5.0",
@@ -41,6 +43,8 @@
 	"dependencies": {
 		"@fontsource/fira-mono": "^4.5.10",
 		"d3": "^7.8.4",
+		"gsap": "^3.11.5",
+		"smooth-scrollbar": "^8.8.3",
 		"topojson-client": "^3.1.0"
 	}
 }
