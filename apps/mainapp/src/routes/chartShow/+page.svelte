@@ -6,6 +6,7 @@
 	import force_image from '$lib/images/forcechart1.png';
 	import box_image from '$lib/images/boxchart1.png';
 	import map_image from '$lib/images/usmap1.png';
+	import blank_image from '$lib/images/blank1.png';
 </script>
 
 <svelte:head>
@@ -149,14 +150,14 @@
 			</a>
 		</div>
 		<div class="inner-box">
-			<a href="../scrolly-template">
-				<img class="mytest-image" src={map_image} alt="chart Map" />
+			<a href="../gsap4">
+				<img class="mytest-image" src={blank_image} alt="chart Map" />
 				<h1 class="box-title">Scrolly-template</h1>
 			</a>
 		</div>
 		<div class="inner-box">
 			<a href="../scrolly1">
-				<img class="mytest-image" src={map_image} alt="chart Map" />
+				<img class="mytest-image" src={blank_image} alt="chart Map" />
 				<h1 class="box-title">Scrolly</h1>
 			</a>
 		</div>
