@@ -15,11 +15,11 @@
     gsap.registerPlugin(ScrollTrigger)
 
     gsap.to(myElement, {
-      //x: 300,
+      x: 300,
       duration: 2,
       scrollTrigger: {
         trigger: ".square",
-
+        markers: true,
         // start: 400
         start: "top 30%",
     
