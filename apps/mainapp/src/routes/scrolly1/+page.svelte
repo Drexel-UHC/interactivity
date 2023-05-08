@@ -16,6 +16,7 @@
     // Create a renderer and add it to the cube-container div
     renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setClearColor(0x000000, 0);
     const cubeContainer = document.getElementById('cube-container');
     cubeContainer.appendChild(renderer.domElement);
   
