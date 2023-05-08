@@ -13,10 +13,11 @@
     scene = new THREE.Scene();
     camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
   
-    // Create a renderer and add it to the DOM
+    // Create a renderer and add it to the cube-container div
     renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
-    document.body.appendChild(renderer.domElement);
+    const cubeContainer = document.getElementById('cube-container');
+    cubeContainer.appendChild(renderer.domElement);
   
     // Add a cube to the scene
     const geometry = new THREE.BoxGeometry();
@@ -46,9 +47,17 @@
 </script>
 
 <style>
+  #cube-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   canvas {
     display: block;
   }
 </style>
 
-<div id="thing-container"></div>
+<div id="cube-container"></div>
+
