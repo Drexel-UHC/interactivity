@@ -1,64 +1,46 @@
 <svelte:head>
-	<title>Scrolly 1</title>
-	<meta name="description" content="map page" />
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scrollbar/8.6.1/smooth-scrollbar.js" integrity="sha512-3Csz15JaSnj/L3/crtY2nJ0SJusskVc+wjv6qqC31RKV+JRLnV0kXZhodM+pkOKT71UZjJauQjSJuErMsrro+g==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
 </svelte:head>
 
 <script>
-	import gsap from 'gsap';
-	import ScrollTrigger from 'gsap/ScrollTrigger';
-	import Scrollbar from 'smooth-scrollbar';
-	
-	import { onMount } from 'svelte';
-	
+  import { onMount } from 'svelte';
 	import Hello from '../../newcomp/Hello.svelte'
 	import Main from '../../newcomp/Main.svelte'
 	import Goodbye from '../../newcomp/Goodbye.svelte'
-	
-	onMount(() => {
-		gsap.registerPlugin(ScrollTrigger)
 		
-		const scroller = document.body;
-		
-		const smoothScroll = Scrollbar.init(scroller, { damping: 0.1, delegateTo: document, alwaysShowTracks: true })
-		
-		ScrollTrigger.scrollerProxy(scroller, {
-      scrollTop(value) {
-        if (arguments.length) {
-          smoothScroll.scrollTop = value;
-        }
-        return smoothScroll.scrollTop
-      }
-    })
+  let myElement;
 
-		smoothScroll.addListener(ScrollTrigger.update);
+ const rotateElement = () => {
+    gsap.to(myElement, {
+      rotation: '+=360',
+      duration: 2,
+      ease: 'none',
+    });
+  };
 
-		ScrollTrigger.defaults({ 
-			scroller: scroller,
-			pinType: 'transform'
-		});		
-		
-		const timeline = gsap.timeline({
-			scrollTrigger: {
-        trigger: '.section-2',
-        start: 'top top',
-        end: '+=200%',
-        scrub: true,
-        pin: true,
-        anticipatePin: 1
-			}
-		})
-		timeline.to('.section-2 h1', { duration: 1, rotate: 360 })
-		
-	})
+   onMount(() => {
+    gsap.registerPlugin(ScrollTrigger)
+
+    ScrollTrigger.create({
+      trigger: ".trigger_element",
+      markers: true,
+      start: "top center",
+      onEnter: rotateElement,
+      onEnterBack: rotateElement,
+      onLeaveBack: rotateElement,
+    });
+  })
 </script>
 
-<Hello/>
-<Main/>
-<Goodbye/>
 
+<Hello/>
+ <section class="section-2">
+	<h1  bind:this={myElement} class='trigger_element'> The world is yours.</h1>
+</section>
+<Goodbye />
+ 
 <style>
 	:global(body) {
 		padding: 0;
@@ -70,4 +52,15 @@
 		justify-content: center;
 		min-height: 100vh;
 	}
+
+
+  .section-2 {
+		background: lightgrey;
+	}
+	
+	.section-2 h1 {
+		color: teal;
+	}
+
+
 </style>
