@@ -36,7 +36,7 @@
 		ScrollTrigger.create({
 		trigger: "#chart",
 		start: "top center",
-		endTrigger: "#section2",
+		endTrigger: "#section3",
 		end: "top center",
 		scrub: true,
 		markers: true,
@@ -161,6 +161,22 @@
 	}
 </script>
 
-<div id="section1" style="height: 100vh; background-color: #f0f0f0;"></div>
-<div id="chart"></div>
-<div id="section2" style="height: 100vh; background-color: #f0f0f0;"></div>
+<div id="section1"></div>
+<div id="section2">
+	<div id="chart"></div>
+</div>
+<div id="section3"></div>
+<style>
+	#section1 {
+		height: 100vh;
+		background-color: coral;
+	}
+	#section2 {
+		height: 100vh;
+		background-color: indianred;
+	}
+	#section3 {
+		height: 100vh;
+		background-color: salmon;
+	}
+</style>
