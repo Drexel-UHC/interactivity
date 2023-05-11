@@ -167,6 +167,12 @@
 				<h1 class="box-title">Scrolly 2</h1>
 			</a>
 		</div>
+		<div class="inner-box">
+			<a href="../scrolly3">
+				<img class="mytest-image" src={line_image} alt="chart 3 D" />
+				<h1 class="box-title">Scrolly 3</h1>
+			</a>
+		</div>
 	</div>
 </div>
 
