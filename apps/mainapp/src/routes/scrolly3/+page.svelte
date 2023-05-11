@@ -1,6 +1,9 @@
 <svelte:head>
 	<title>Box Plot Chart</title>
 	<meta name="description" content="About test page" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
 </svelte:head>
 
 <script>
@@ -56,12 +59,28 @@
 	function animateDataTransition(fromData, toData) {
 		const transitionDuration = 1; // Duration of the transition animation in seconds
 
-		// Animate the opacity of the existing chart to 0
-		gsap.to("#chart svg", { opacity: 0, duration: transitionDuration, onComplete: () => {
-		drawBoxPlot(toData); // Draw the new chart
-		gsap.to("#chart svg", { opacity: 1, duration: transitionDuration }); // Animate the opacity of the new chart to 1
-		}});
-	}
+		// Animate the position of the existing chart elements
+		gsap.to("#chart .box, #chart .whisker, #chart .median", {
+			y: "-=50", // Move the boxes up by 50 units
+			duration: transitionDuration / 2,
+			onComplete: () => {
+			// Remove the existing chart elements
+			d3.select("#chart svg").remove();
+
+			// Draw the new chart
+			drawBoxPlot(toData);
+
+			// Position the new chart elements below the viewport
+			gsap.set("#chart .box, #chart .whisker, #chart .median", { y: "+=50" });
+
+			// Animate the position of the new chart elements back to their original position
+			gsap.to("#chart .box, #chart .whisker, #chart .median", {
+				y: "0",
+				duration: transitionDuration / 2,
+			});
+			},
+		});
+		}
 
 	function drawBoxPlot(data) {
 		d3.select("#chart svg").remove();
@@ -112,7 +131,8 @@
 			.attr("x2", d => x(d.x) + x.bandwidth())
 			.attr("y2", d => y(d3.median(d.y)))
 			.attr("stroke", "black")
-			.attr("stroke-width", 2);
+			.attr("stroke-width", 2)
+			.attr("class", "median");
 		// Draw the upper whisker
 		svg.selectAll()
 			.data(data)
