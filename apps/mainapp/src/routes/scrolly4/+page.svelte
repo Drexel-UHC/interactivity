@@ -10,9 +10,9 @@
 <script>
 	import * as d3 from "d3";
 	import { onMount } from "svelte";
-	import { gsap } from "gsap/dist/gsap";
+	import { gsap } from "gsap"
 	import { ScrollTrigger } from "gsap/ScrollTrigger";
-	// gsap.registerPlugin(ScrollTrigger);
+	gsap.registerPlugin(ScrollTrigger);
 	
 	let data = [
 		{
@@ -94,7 +94,7 @@
 	
 		updateChart();
 		
-		gsap.registerPlugin(ScrollTrigger)
+		// gsap.registerPlugin(ScrollTrigger)
 		ScrollTrigger.create({
 			trigger: "#chart",
 			start: "top top",
@@ -169,10 +169,10 @@
 			.remove();
 	}
   
-	function switchGroup() {
-		selectedGroup = selectedGroup === 'A' ? 'B' : 'A';
-		updateChart();
-	}
+	// function switchGroup() {
+	// 	selectedGroup = selectedGroup === 'A' ? 'B' : 'A';
+	// 	updateChart();
+	// }
 </script>
   
 <style>
