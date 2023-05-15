@@ -1,4 +1,4 @@
-<svelte:head>
+<!-- <svelte:head>
 	<title>Box Plot Chart</title>
 	<meta name="description" content="About test page" />
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
@@ -179,4 +179,4 @@
 		height: 100vh;
 		background-color: salmon;
 	}
-</style>
+</style> -->
