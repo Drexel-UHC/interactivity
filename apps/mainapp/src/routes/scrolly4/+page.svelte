@@ -12,7 +12,7 @@
 	import { onMount } from "svelte";
 	import { gsap } from "gsap/dist/gsap";
 	import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-	// gsap.registerPlugin(ScrollTrigger);
+	gsap.registerPlugin(ScrollTrigger);
 	
 	let data = [
 		{
@@ -93,7 +93,7 @@
 			.attr('class', 'circle-group');
 	
 		updateChart();
-		gsap.registerPlugin(ScrollTrigger)
+
 		ScrollTrigger.create({
 			trigger: "#chart",
 			start: "top top",
