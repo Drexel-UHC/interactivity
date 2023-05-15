@@ -12,7 +12,7 @@
 	import { onMount } from "svelte";
 	import { gsap } from "gsap/dist/gsap";
 	import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-	gsap.registerPlugin(ScrollTrigger);
+	// gsap.registerPlugin(ScrollTrigger);
 	
 	let data = [
 		{
@@ -71,47 +71,6 @@
 	let lineGroup;
 	let circleGroup;
 	
-	onMount(() => {
-		svg = d3.select('#chart')
-			.append('svg')
-			.attr('width', width + margin.left + margin.right)
-			.attr('height', height + margin.top + margin.bottom)
-			.append('g')
-			.attr('transform', `translate(${margin.left},${margin.top})`);
-	
-		xAxisEl = svg.append('g')
-			.attr('class', 'x axis')
-			.attr('transform', `translate(0,${height})`);
-	
-		yAxisEl = svg.append('g')
-			.attr('class', 'y axis');
-	
-		lineGroup = svg.append('g')
-			.attr('class', 'line-group');
-	
-		circleGroup = svg.append('g')
-			.attr('class', 'circle-group');
-	
-		updateChart();
-		
-		// gsap.registerPlugin(ScrollTrigger)
-		ScrollTrigger.create({
-			trigger: "#chart",
-			start: "top top",
-			end: "bottom bottom",
-			scrub: true,
-			onUpdate: self => {
-				if (self.progress > 0.5 && selectedGroup !== 'B') {
-					selectedGroup = 'B';
-					updateChart();
-				} else if (self.progress <= 0.5 && selectedGroup !== 'A') {
-					selectedGroup = 'A';
-					updateChart();
-				}
-			}
-		});
-    });
-	
 	function updateChart() {
 		let selectedData = data.find(d => d.group === selectedGroup);
 		
@@ -168,7 +127,46 @@
 			.attr('r', 0)
 			.remove();
 	}
-  
+	onMount(() => {
+		svg = d3.select('#chart')
+			.append('svg')
+			.attr('width', width + margin.left + margin.right)
+			.attr('height', height + margin.top + margin.bottom)
+			.append('g')
+			.attr('transform', `translate(${margin.left},${margin.top})`);
+	
+		xAxisEl = svg.append('g')
+			.attr('class', 'x axis')
+			.attr('transform', `translate(0,${height})`);
+	
+		yAxisEl = svg.append('g')
+			.attr('class', 'y axis');
+	
+		lineGroup = svg.append('g')
+			.attr('class', 'line-group');
+	
+		circleGroup = svg.append('g')
+			.attr('class', 'circle-group');
+	
+		updateChart();
+		
+		gsap.registerPlugin(ScrollTrigger)
+		ScrollTrigger.create({
+			trigger: "#chart",
+			start: "top top",
+			end: "bottom bottom",
+			scrub: true,
+			onUpdate: self => {
+				if (self.progress > 0.5 && selectedGroup !== 'B') {
+					selectedGroup = 'B';
+					updateChart();
+				} else if (self.progress <= 0.5 && selectedGroup !== 'A') {
+					selectedGroup = 'A';
+					updateChart();
+				}
+			}
+		});
+    });
 	// function switchGroup() {
 	// 	selectedGroup = selectedGroup === 'A' ? 'B' : 'A';
 	// 	updateChart();
@@ -179,6 +177,21 @@
 	#chart {
 		height: 100vh;
 		overflow: hidden;
+		justify-content: center;
+		align-items: center;
+		display: flex;
+		position: sticky;
+	}
+	.mainbox {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
 	}
 </style>
+<div class="mainbox">
 <div id="chart"></div>
+</div>
