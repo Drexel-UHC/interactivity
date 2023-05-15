@@ -94,7 +94,7 @@
 	
 		updateChart();
 		
-		gsap.registerPlugin(ScrollTrigger);
+		gsap.registerPlugin(ScrollTrigger)
 		ScrollTrigger.create({
 			trigger: "#chart",
 			start: "top top",
