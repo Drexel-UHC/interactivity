@@ -1,5 +1,5 @@
 <svelte:head>
-	<title>Box Plot Chart</title>
+	<title>line chart Chart</title>
 	<meta name="description" content="About test page" />
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
@@ -8,11 +8,11 @@
 
 <h1>D3 Line Chart Example</h1>
 <script>
-	import { onMount } from 'svelte';
-	import * as d3 from 'd3';
+	import * as d3 from "d3";
+	import { onMount } from "svelte";
 	import { gsap } from "gsap/dist/gsap";
 	import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-	gsap.registerPlugin(ScrollTrigger);
+	// gsap.registerPlugin(ScrollTrigger);
 	
 	let data = [
 		{
@@ -93,7 +93,7 @@
 			.attr('class', 'circle-group');
 	
 		updateChart();
-
+		gsap.registerPlugin(ScrollTrigger)
 		ScrollTrigger.create({
 			trigger: "#chart",
 			start: "top top",
