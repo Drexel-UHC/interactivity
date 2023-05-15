@@ -10,8 +10,11 @@
 <script>
 	import { onMount } from 'svelte';
 	import * as d3 from 'd3';
-	import gsap from 'gsap';
-	import ScrollTrigger from 'gsap/ScrollTrigger';
+	import { gsap } from "gsap/dist/gsap";
+	import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+	// gsap.registerPlugin(ScrollTrigger);
+
 	gsap.registerPlugin(ScrollTrigger);
 	
 	let data = [
