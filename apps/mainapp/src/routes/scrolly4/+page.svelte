@@ -168,10 +168,10 @@
 			.remove();
 	}
   
-	function switchGroup() {
-		selectedGroup = selectedGroup === 'A' ? 'B' : 'A';
-		updateChart();
-	}
+	// function switchGroup() {
+	// 	selectedGroup = selectedGroup === 'A' ? 'B' : 'A';
+	// 	updateChart();
+	// }
 </script>
   
 <style>
