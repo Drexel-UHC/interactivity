@@ -157,13 +157,8 @@
 			end: "bottom bottom",
 			scrub: true,
 			onUpdate: self => {
-				if (self.progress > 0.5 && selectedGroup !== 'B') {
-					selectedGroup = 'B';
-					updateChart();
-				} else if (self.progress <= 0.5 && selectedGroup !== 'A') {
-					selectedGroup = 'A';
-					updateChart();
-				}
+				selectedGroup = self.progress < 0.5 ? 'A' : 'B';
+				updateChart();
 			}
 		});
     });
