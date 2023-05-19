@@ -2,33 +2,36 @@
 	import data from './scrollies.json';
 	import Item from '../../lib/home/Item.svelte';
 	import Chip from '../../lib/home/Chip.svelte';
+	import { ListBox, ListBoxItem } from '@skeletonlabs/skeleton';
+	// Tags
+	let tags = [...new Set(data.flatMap((item) => item.tech))];
+	let selectedTag = 999;
+	let selectedTagName = tags[selectedTag];
+	$: selectedTagName = tags[selectedTag];
 
-	// Tech
-	let techNames = [...new Set(data.flatMap((item) => item.tech))];
-	let selectTechIndex = 999;
-	let selectedTechName = techNames[selectTechIndex];
-	$: selectedTechName = techNames[selectTechIndex];
+	// ListBox
+	let valueMultiple = [];
 
 	// Text Search
 	let search = '';
 
-	// Visisble scrollies
+	// Visible scrollies
 	$: visibleScrollies = data.filter((item) => {
-		if ((selectTechIndex === 999) & (search === '')) return true;
-		else if ((selectTechIndex === 999) & (search !== ''))
+		if ((valueMultiple.length === 0) & (search === '')) return true;
+		else if ((valueMultiple.length === 0) & (search !== ''))
 			return item.name.toLowerCase().includes(search.toLowerCase());
-		else if ((selectTechIndex !== 999) & (search === ''))
-			return item.tech.includes(selectedTechName);
-		else if ((selectTechIndex !== 999) & (search !== ''))
+		else if ((valueMultiple.length !== 0) & (search === '')) {
+			return valueMultiple.some((tag) => item.tech.includes(tag));
+		} else {
 			return (
-				item.name.toLowerCase().includes(search.toLowerCase()) &
-				item.tech.includes(selectedTechName)
+				valueMultiple.some((tag) => item.tech.includes(tag)) &&
+				item.name.toLowerCase().includes(search.toLowerCase())
 			);
-		else return item.tech.includes(selectedTechName);
+		}
 	});
 
 	function handleRemoveFilter() {
-		selectTechIndex = 999;
+		selectedTag = 999;
 	}
 </script>
 
@@ -41,19 +44,19 @@
 		placeholder="search ... "
 	/>
 	<div class="chipRow">
-		<Chip label={selectedTechName} on:click={handleRemoveFilter} />
+		<Chip label={selectedTagName} on:click={handleRemoveFilter} />
 	</div>
 </div>
+
 <div class="container">
 	<div class="sidebar">
 		<div class="filter-group">
 			<h3>Categories</h3>
-			{#each techNames as tech, i}
-				<label>
-					<input type="radio" bind:group={selectTechIndex} value={i} />
-					{tech}
-				</label>
-			{/each}
+			<ListBox multiple>
+				{#each tags as tag, i}
+					<ListBoxItem bind:group={valueMultiple} name="medium" value={tag}>{tag}</ListBoxItem>
+				{/each}
+			</ListBox>
 		</div>
 	</div>
 
