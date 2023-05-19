@@ -1,9 +1,9 @@
 [
 	{
     "id": 1,
-    "name": "Scrolly template connor",
-    "desc": "This is a fork of Connor's scrolly template.",
-    "tech": ["<Scrolly/>","Scatter plot","Responsive"],
+    "name": "The Pudding Scrolly template ",
+    "desc": "This is a fork of Connor from The Pudding's scrolly template.",
+    "tech": ["The Pudding","Scatter plot","Responsive"],
     "path": "./scrollies/scrolly-1",
     "img": "./src/lib/images/scrolly-1-img.png"
   } 
