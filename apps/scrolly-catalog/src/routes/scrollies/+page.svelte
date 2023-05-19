@@ -46,13 +46,15 @@
 
 <div class="container">
 	<div class="sidebar">
-		<div class="filter-group">
-			<h3>Categories</h3>
-			<ListBox multiple>
-				{#each tags as tag, i}
-					<ListBoxItem bind:group={valueMultiple} name="medium" value={tag}>{tag}</ListBoxItem>
-				{/each}
-			</ListBox>
+		<div class="card">
+			<header class="card-header text-center text-2xl font-bold">Categories</header>
+			<section class="p-4">
+				<ListBox multiple>
+					{#each tags as tag, i}
+						<ListBoxItem bind:group={valueMultiple} name="medium" value={tag}>{tag}</ListBoxItem>
+					{/each}
+				</ListBox>
+			</section>
 		</div>
 	</div>
 
