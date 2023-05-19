@@ -6,6 +6,7 @@
 	// Most of your app wide CSS should be put in this file
 	import '../app.postcss';
 	import { AppShell, AppBar } from '@skeletonlabs/skeleton';
+	import { LightSwitch } from '@skeletonlabs/skeleton';
 </script>
 
 <!-- App Shell -->
@@ -21,6 +22,7 @@
 
 			 <a href = '/scrollies'><button type="button" class="btn btn-sm variant-filled">Scrolly Catalog</button></a>
 			<svelte:fragment slot="trail">
+				<LightSwitch />
 				<a
 					class="btn btn-sm variant-ghost-surface"
 					href="https://github.com/Drexel-UHC/interactivity"
