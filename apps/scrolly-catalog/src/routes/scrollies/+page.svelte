@@ -37,8 +37,8 @@
   <div class="content">
 
 <div style="padding-bottom: 20px;">
-      <input type="text" bind:value={search}  placeholder="Search by name..." />
-  
+       
+      <input class="input" bind:value={search}  title="Input (text)" type="text" placeholder="search ... " />
     <Chip label={selectedTechName} on:click={handleRemoveFilter} />
 </div>
     {#each visibleScrollies as item (item.id)}
