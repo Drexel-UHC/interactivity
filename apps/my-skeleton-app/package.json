@@ -36,5 +36,9 @@
 		"vite": "^4.3.0",
 		"vitest": "^0.25.3"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"d3-array": "^3.2.3",
+		"d3-scale": "^4.0.2"
+	}
 }

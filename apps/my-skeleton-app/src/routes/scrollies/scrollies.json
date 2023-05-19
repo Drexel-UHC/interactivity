@@ -1,0 +1,10 @@
+[
+	{
+    "id": 1,
+    "name": "Scrolly template connor",
+    "desc": "This is a fork of Connor's scrolly template.",
+    "tech": ["<Scrolly/>","Scatter plot","Responsive"],
+    "path": "./scrollies/scrolly-1",
+    "img": "./src/lib/images/scrolly-1-img.png"
+  } 
+]
