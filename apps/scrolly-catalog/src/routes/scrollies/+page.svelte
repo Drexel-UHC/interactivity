@@ -1,7 +1,6 @@
 <script>
 	import data from './scrollies.json';
 	import Item from '../../lib/home/Item.svelte';
-	import Chip from '../../lib/home/Chip.svelte';
 	import { ListBox, ListBoxItem } from '@skeletonlabs/skeleton';
 	// Tags
 	let tags = [...new Set(data.flatMap((item) => item.tech))];
@@ -43,9 +42,6 @@
 		type="text"
 		placeholder="search ... "
 	/>
-	<div class="chipRow">
-		<Chip label={selectedTagName} on:click={handleRemoveFilter} />
-	</div>
 </div>
 
 <div class="container">
@@ -73,9 +69,7 @@
 		padding: 1rem;
 		flex-direction: column;
 	}
-	.chipRow {
-		height: 1rem;
-	}
+
 	.container {
 		display: flex;
 		padding-left: 10%;
