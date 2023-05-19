@@ -38,6 +38,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@reuters-graphics/graphics-components": "^0.0.37",
 		"d3-array": "^3.2.3",
 		"d3-scale": "^4.0.2"
 	}
