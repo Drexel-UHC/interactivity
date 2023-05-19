@@ -65,11 +65,13 @@
 
   .column-right {
     flex-basis: 30%;
+    display: flex;
+    justify-content: center;
   }
 
  .column-right img {
     max-width: 100%;
-    max-height: 100%;
+    max-height: 100px;
     object-fit: contain;
   }
   
