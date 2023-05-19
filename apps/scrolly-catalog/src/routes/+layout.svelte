@@ -14,8 +14,12 @@
 		<!-- App Bar -->
 		<AppBar>
 			<svelte:fragment slot="lead">
-				<strong class="text-xl uppercase">Scrolly Catalog</strong>
+						   
+			<a href = '/'><button type="button" class="btn btn-sm variant-filled">Home</button></a>
+
 			</svelte:fragment>
+
+			 <a href = '/scrollies'><button type="button" class="btn btn-sm variant-filled">Scrolly Catalog</button></a>
 			<svelte:fragment slot="trail">
 				<a
 					class="btn btn-sm variant-ghost-surface"
