@@ -1,5 +1,13 @@
 [
 	{
+    "id": 0,
+    "name": "dev page - ran",
+    "desc": "Dev page for current development",
+    "tech": ["dev"],
+    "path": "./scrollies/0-ran",
+    "img": "https://cdn-icons-png.flaticon.com/512/5578/5578703.png"
+  } ,
+	{
     "id": 1,
     "name": "Scrolly template connor",
     "desc": "This is a fork of Connor's scrolly template.",
