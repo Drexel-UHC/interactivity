@@ -22,11 +22,11 @@
 	{
     "id": 2,
     "author": "Ran Li",
-    "date": "May 21, 2023",
-    "name": "The Pudding Scrolly Template",
-    "desc": "Reproduction of Connor Rothschild's (Moksha Data Studio)'s demo use case of Russel's <Scrolly/> svelte component.",
+    "date": "May 22, 2023",
+    "name": "Ran first scrolly",
+    "desc": "Basic scrolly utilizing @puddingViz Scrolly component step detection, tweened values for data transitions and basic outputs to show scrolling progress.",
     "tech": ["@puddingViz","Scatter plot","Responsive"],
-    "path": "./scrollies/2-russel",
+    "path": "./scrollies/2-ran-first",
     "img_path": "https://github.com/Drexel-UHC/interactivity/blob/main/src/lib/images/scrolly-1-img.png?raw=true"
   } 
 
