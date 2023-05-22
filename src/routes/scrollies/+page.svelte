@@ -56,31 +56,31 @@
 						<span>x</span>
 					</span>
 				{/each}
+			{:else}
+				<div class="emptyChip" />
 			{/if}
 		</div>
 	</div>
 
-	<div class="catalog-container">
-		<div class="catalog">
-			<div class="sidebar">
-				<div class="card">
-					<header class="card-header text-center text-2xl font-bold">Categories</header>
-					<section class="p-4">
-						<ListBox multiple>
-							{#each tags as tag, i}
-								<ListBoxItem bind:group={selectedTags} name="medium" value={tag}>{tag}</ListBoxItem>
-							{/each}
-						</ListBox>
-					</section>
-				</div>
+	<div class="catalog">
+		<div class="sidebar">
+			<div class="card">
+				<header class="card-header text-center text-2xl font-bold">Categories</header>
+				<section class="p-4">
+					<ListBox multiple>
+						{#each tags as tag, i}
+							<ListBoxItem bind:group={selectedTags} name="medium" value={tag}>{tag}</ListBoxItem>
+						{/each}
+					</ListBox>
+				</section>
 			</div>
+		</div>
 
-			<div class="content">
-				<div style="padding-bottom: 20px;" />
-				{#each visibleScrollies as item (item.id)}
-					<Item {...item} />
-				{/each}
-			</div>
+		<div class="content">
+			<div style="padding-bottom: 20px;" />
+			{#each visibleScrollies as item (item.id)}
+				<Item {...item} />
+			{/each}
 		</div>
 	</div>
 </div>
@@ -96,24 +96,23 @@
 	.topRow {
 		padding: 1rem;
 		flex-direction: column;
-		margin-bottom: 2rem;
 		padding-left: 10%;
 		padding-right: 10%;
+	}
+	.emptyChip {
+		display: flex;
+		flex-direction: row;
+		height: 1.5rem;
 	}
 	.chipRow {
 		display: flex;
 		flex-direction: row;
-		margin-top: 5px;
+		margin-top: 10px;
+		height: 1.5rem;
 	}
 	.chip {
 		width: min-content;
 		margin-left: 10px;
-	}
-
-	.catalog-container {
-		position: fixed;
-		width: 96%;
-		margin-top: 6rem;
 	}
 
 	.catalog {

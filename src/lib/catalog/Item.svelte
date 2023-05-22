@@ -58,11 +58,11 @@
 	}
 
 	.column-center {
-		flex-basis: 50%;
+		flex-basis: 60%;
 	}
 
 	.column-right {
-		flex-basis: 30%;
+		flex-basis: 20%;
 		display: flex;
 		justify-content: center;
 	}
