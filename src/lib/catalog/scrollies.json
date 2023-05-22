@@ -15,7 +15,7 @@
     "date": "May 22, 2023",
     "name": "Ran first scrolly",
     "desc": "Basic scrolly utilizing @puddingViz Scrolly component step detection, tweened values for data transitions and basic outputs to show scrolling progress.",
-    "tech": ["@puddingViz","Scatter plot","Responsive"],
+    "tech": ["Learning"],
     "path": "./scrollies/2-ran-first",
     "img_path": "https://github.com/Drexel-UHC/interactivity/blob/main/src/lib/images/scrolly-2-img.JPG?raw=true"
   }  ,
@@ -24,8 +24,8 @@
     "author": "Ran Li",
     "date": "May 22, 2023",
     "name": "Basic Vaccination Scrolly",
-    "desc": "This is to adapt Connor's guide to a ChatGPT prompted scrolly. The goal is to learn put together a basic prompt and utilize the scrolly component, D3 scales and tweened values to create a scrolly that shows the effect of vaccination on a fictional disease. ",
-    "tech": ["@puddingViz","Scatter plot","Responsive"],
+    "desc": "This is to adapt Connor's guide to a ChatGPT prompted scrolly. The goal is to learn put together a basic prompt and utilize the scrolly component, D3 scales and tweened values to create a scrolly that shows the effect of vaccination on a fictional disease. Note this is basic scrolly without best practices e.g. responsiveness.",
+    "tech": ["Scatter plot","Learning"],
     "path": "./scrollies/3-fictional-vaccination",
     "img_path": "https://github.com/Drexel-UHC/interactivity/blob/main/src/lib/images/scrolly-1-img.png?raw=true"
   } 
