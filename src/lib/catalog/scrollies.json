@@ -28,6 +28,16 @@
     "tech": ["@puddingViz","Scatter plot","Responsive"],
     "path": "./scrollies/2-ran-first",
     "img_path": "https://github.com/Drexel-UHC/interactivity/blob/main/src/lib/images/scrolly-1-img.png?raw=true"
+  }  ,
+	{
+    "id": 3,
+    "author": "Ran Li",
+    "date": "May 22, 2023",
+    "name": "Basic Vaccination Scrolly",
+    "desc": "This is to adapt Connor's guide to a ChatGPT prompted scrolly. The goal is to learn put together a basic prompt and utilize the scrolly component, D3 scales and tweened values to create a scrolly that shows the effect of vaccination on a fictional disease. ",
+    "tech": ["@puddingViz","Scatter plot","Responsive"],
+    "path": "./scrollies/3-fictional-vaccination",
+    "img_path": "https://github.com/Drexel-UHC/interactivity/blob/main/src/lib/images/scrolly-1-img.png?raw=true"
   } 
 
 ]
