@@ -5,7 +5,7 @@
     "desc": "Dev page for current development",
     "tech": ["dev"],
     "path": "./scrollies/0-ran",
-    "img": "https://cdn-icons-png.flaticon.com/512/5578/5578703.png"
+    "img_path": "https://github.com/Drexel-UHC/interactivity/blob/main/src/lib/images/dev-icon.png?raw=true"
   } ,
 	{
     "id": 1,
@@ -13,6 +13,6 @@
     "desc": "This is a fork of The Pudding's Connor Rothschild scrolly template.",
     "tech": ["The Pudding","Scatter plot","Responsive"],
     "path": "./scrollies/scrolly-1",
-    "img": "./src/lib/images/scrolly-1-img.png"
+    "img_path": "https://github.com/Drexel-UHC/interactivity/blob/main/src/lib/images/scrolly-1-img.png?raw=true"
   } 
 ]
