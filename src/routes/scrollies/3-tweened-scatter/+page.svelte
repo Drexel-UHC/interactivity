@@ -14,10 +14,14 @@
 		data = data_all.filter((d) => d.step == step.toString());
 		tweenedData.set(data);
 	}
+
+	let replUrl = 'https://svelte.dev/repl/b6b2697eb82f4972ad02a3bdaa00d659?version=3.59.1';
 </script>
 
 <div class="container">
-	<div class="buttons">
+	<iframe class="repl-iframe" src={replUrl} />
+
+	<!-- <div class="buttons">
 		<button on:click={() => updateStep('1')} type="button" class="btn btn-sm variant-filled"
 			>Step 1</button
 		>
@@ -32,10 +36,16 @@
 				<circle cx={x * 20} cy={y * 20} r="5" />
 			{/each}
 		</svg>
-	</div>
+	</div> -->
 </div>
 
 <style>
+	.repl-iframe {
+		width: 90%;
+		height: 500px;
+		border: none;
+	}
+
 	.container {
 		display: flex;
 		flex-direction: column;

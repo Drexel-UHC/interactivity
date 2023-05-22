@@ -18,15 +18,25 @@
     "tech": ["Learning"],
     "path": "./scrollies/2-ran-first",
     "img_path": "https://github.com/Drexel-UHC/interactivity/blob/main/src/lib/images/scrolly-2-img.JPG?raw=true"
-  }  ,
+  } ,
 	{
     "id": 3,
+    "author": "Ran Li",
+    "date": "May 22, 2023",
+    "name": "Tweened Scatter",
+    "desc": "Figuring out to how to tween a two dimensional data structure. This is a key component in developing tweened scatter plots.",
+    "tech": ["Scatter plot","Learning"],
+    "path": "./scrollies/3-tweened-scatter",
+    "img_path": "https://github.com/Drexel-UHC/interactivity/blob/main/src/lib/images/scrolly-3-tweened-scatter-poc.JPG?raw=true"
+  }  ,
+	{
+    "id": 4,
     "author": "Ran Li",
     "date": "May 22, 2023",
     "name": "Basic Vaccination Scrolly",
     "desc": "This is to adapt Connor's guide to a ChatGPT prompted scrolly. The goal is to learn put together a basic prompt and utilize the scrolly component, D3 scales and tweened values to create a scrolly that shows the effect of vaccination on a fictional disease. Note this is basic scrolly without best practices e.g. responsiveness.",
     "tech": ["Scatter plot","Learning"],
-    "path": "./scrollies/3-fictional-vaccination",
+    "path": "./scrollies/4-fictional-vaccination",
     "img_path": "https://github.com/Drexel-UHC/interactivity/blob/main/src/lib/images/dev-icon.png?raw=true"
   } 
 
