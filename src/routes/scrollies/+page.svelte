@@ -90,8 +90,4 @@
 		width: calc(100% - 200px);
 		padding: 10px;
 	}
-	.filter-group {
-		display: flex;
-		flex-direction: column;
-	}
 </style>
