@@ -13,10 +13,21 @@
     "id": 1,
     "author": "Ran Li",
     "date": "May 21, 2023",
+    "name": "Connor Rothschild Scrolly Demo",
+    "desc": "Reproduction of Connor Rothschild's (Moksha Data Studio)'s demo use case of Russel's <Scrolly/> svelte component; explaination can of code can be found here: https://www.connorrothschild.com/post/svelte-scrollytelling. ",
+    "tech": ["@puddingViz","Scatter plot","Responsive"],
+    "path": "./scrollies/1-connor",
+    "img_path": "https://github.com/Drexel-UHC/interactivity/blob/main/src/lib/images/scrolly-1-img.png?raw=true"
+  } ,
+	{
+    "id": 2,
+    "author": "Ran Li",
+    "date": "May 21, 2023",
     "name": "The Pudding Scrolly Template",
-    "desc": "This is a fork of The Pudding's Connor Rothschild scrolly template.",
-    "tech": ["The Pudding","Scatter plot","Responsive"],
-    "path": "./scrollies/scrolly-1",
+    "desc": "Reproduction of Connor Rothschild's (Moksha Data Studio)'s demo use case of Russel's <Scrolly/> svelte component.",
+    "tech": ["@puddingViz","Scatter plot","Responsive"],
+    "path": "./scrollies/2-russel",
     "img_path": "https://github.com/Drexel-UHC/interactivity/blob/main/src/lib/images/scrolly-1-img.png?raw=true"
   } 
+
 ]
