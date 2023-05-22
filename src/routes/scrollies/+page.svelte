@@ -89,8 +89,8 @@
 	.global {
 		display: flex;
 		flex-direction: column;
-		padding-left: 5%;
-		padding-right: 5%;
+		padding-left: 2%;
+		padding-right: 2%;
 	}
 
 	.topRow {
@@ -112,25 +112,25 @@
 
 	.catalog-container {
 		position: fixed;
-		width: 80%;
+		width: 96%;
 		margin-top: 6rem;
 	}
 
 	.catalog {
 		display: flex;
-		padding-left: 10%;
-		padding-right: 10%;
+		padding-left: 4%;
+		padding-right: 4%;
 	}
 
 	.sidebar {
 		width: 200px;
 		height: 100%;
 		padding: 10px;
-		margin: 0px;
+		margin-top: 10px;
 	}
 	.content {
 		width: calc(100% - 200px);
 		margin: 0px;
-		padding: 10px;
+		padding-left: 10px;
 	}
 </style>

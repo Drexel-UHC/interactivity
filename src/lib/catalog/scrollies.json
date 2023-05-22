@@ -2,7 +2,7 @@
 	{
     "id": 0,
     "author": "Ran Li",
-    "date": "",
+    "date": "May 22, 2023",
     "name": "dev page - ran",
     "desc": "Dev page for current development",
     "tech": ["dev"],
@@ -12,7 +12,7 @@
 	{
     "id": 1,
     "author": "Ran Li",
-    "date": "05-21-2023",
+    "date": "May 21, 2023",
     "name": "The Pudding Scrolly Template",
     "desc": "This is a fork of The Pudding's Connor Rothschild scrolly template.",
     "tech": ["The Pudding","Scatter plot","Responsive"],

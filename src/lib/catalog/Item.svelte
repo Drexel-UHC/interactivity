@@ -1,4 +1,6 @@
 <script>
+	export let author;
+	export let date;
 	export let name;
 	export let desc;
 	export let tech;
@@ -6,24 +8,30 @@
 	export let img_path;
 </script>
 
-<div class="row">
-	<div class="column column-left" />
-
-	<div class="column column-center">
-		<div class="content">
-			<div class="content-row title"><a href={path}>{name}</a></div>
-			<div class="content-row tech-row">
-				{#each tech as techItem}
-					<div class="tech-chip">
-						{techItem}
-					</div>
-				{/each}
-			</div>
-			<div {desc} class="content-row">{desc}</div>
+<div class="card p-4">
+	<div class="row">
+		<div class="column column-left">
+			{date}
+			<br />
+			{author}
 		</div>
-	</div>
-	<div class="column column-right">
-		<img src={img_path} alt={`${name} logo`} />
+
+		<div class="column column-center">
+			<div class="content">
+				<div class="content-row title"><a href={path}>{name}</a></div>
+				<div class="content-row tech-row">
+					{#each tech as techItem}
+						<div class="tech-chip">
+							{techItem}
+						</div>
+					{/each}
+				</div>
+				<div {desc} class="content-row">{desc}</div>
+			</div>
+		</div>
+		<div class="column column-right">
+			<img src={img_path} alt={`${name} logo`} />
+		</div>
 	</div>
 </div>
 
@@ -33,9 +41,10 @@
 		text-decoration: none;
 	}
 
+	.card {
+		margin-bottom: 5px;
+	}
 	.row {
-		border: 1px solid gainsboro;
-
 		display: flex;
 		justify-content: space-between;
 		padding: 10px;
