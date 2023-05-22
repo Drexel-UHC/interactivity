@@ -1,7 +1,8 @@
 <script>
-	import data from './scrollies.json';
-	import Item from '../../lib/home/Item.svelte';
-	import { ListBox, ListBoxItem } from '@skeletonlabs/skeleton';
+	import data from '../../lib/catalog/scrollies.json';
+	import Item from '../../lib/catalog/Item.svelte';
+	import { ListBox, ListBoxItem, InputChip } from '@skeletonlabs/skeleton';
+
 	// Tags
 	let tags = [...new Set(data.flatMap((item) => item.tech))];
 	let selectedTag = 999;
