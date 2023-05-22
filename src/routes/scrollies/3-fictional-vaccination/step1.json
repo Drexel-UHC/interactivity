@@ -1,0 +1,27 @@
+[
+  {
+    "realm": "Arendelle",
+    "vaccination_rate": 10,
+    "covid_cases": 30
+  },
+  {
+    "realm": "Agrabah",
+    "vaccination_rate": 5,
+    "covid_cases": 20
+  },
+  {
+    "realm": "Atlantica",
+    "vaccination_rate": 3,
+    "covid_cases": 50
+  },
+  {
+    "realm": "Corona",
+    "vaccination_rate": 8,
+    "covid_cases": 5
+  },
+  {
+    "realm": "Zootopia",
+    "vaccination_rate": 4,
+    "covid_cases": 45
+  }
+]

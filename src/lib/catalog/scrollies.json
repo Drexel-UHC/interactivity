@@ -27,7 +27,7 @@
     "desc": "This is to adapt Connor's guide to a ChatGPT prompted scrolly. The goal is to learn put together a basic prompt and utilize the scrolly component, D3 scales and tweened values to create a scrolly that shows the effect of vaccination on a fictional disease. Note this is basic scrolly without best practices e.g. responsiveness.",
     "tech": ["Scatter plot","Learning"],
     "path": "./scrollies/3-fictional-vaccination",
-    "img_path": "https://github.com/Drexel-UHC/interactivity/blob/main/src/lib/images/scrolly-1-img.png?raw=true"
+    "img_path": "https://github.com/Drexel-UHC/interactivity/blob/main/src/lib/images/dev-icon.png?raw=true"
   } 
 
 ]

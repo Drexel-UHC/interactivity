@@ -1,32 +1,48 @@
 <script>
-	let data = [
-		{ foo: 4, bar: 1 },
-		{ foo: 6, bar: 7 },
-		{ foo: 9, bar: 5 },
-		{ foo: 2, bar: 4 },
-		{ foo: 8, bar: 2 },
-		{ foo: 9, bar: 9 },
-		{ foo: 5, bar: 3 },
-		{ foo: 3, bar: 8 },
-		{ foo: 1, bar: 6 }
-	];
+	import data1 from './step1.json';
+	import { scaleLinear, scaleLog } from 'd3-scale';
 
-	import { tweened } from 'svelte/motion';
-	const tweenedX = tweened(data.map((d) => d.foo));
-
-	const setFoo = function () {
-		tweenedX.set(data.map((d) => d.foo));
-	};
-	const setBar = function () {
-		tweenedX.set(data.map((d) => d.bar));
-	};
+	// D3 Scales
+	let width = 400;
+	let height = 400;
+	let xValues = data1.map((d) => d.vaccination_rate);
+	let yValues = data1.map((d) => d.covid_cases);
+	console.log([Math.min(...xValues), Math.max(...xValues)]);
+	console.log([Math.min(...yValues), Math.max(...yValues)]);
+	let xScale = scaleLinear()
+		.domain([0, Math.max(...xValues) * 1.1])
+		.range([0, width]);
+	let yScale = scaleLinear()
+		.domain([0, Math.max(...yValues) * 1.1])
+		.range([height, 0]);
 </script>
 
-<button on:click={setFoo}>Foo</button>
-<button on:click={setBar}>Bar</button>
-<p>
-	Your values:
-	{#each $tweenedX as x}
-		{x}
-	{/each}
-</p>
+<div class="container">
+	<div class="chart">
+		<svg {width} {height}>
+			{#each data1 as d}
+				<circle
+					cx={xScale(d.vaccination_rate)}
+					cy={yScale(d.covid_cases)}
+					r={15}
+					fill="steelblue"
+					stroke="#000000"
+				/>
+			{/each}
+		</svg>
+	</div>
+</div>
+
+<style>
+	.container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+	}
+	.chart {
+		background: whitesmoke;
+		width: 400px;
+		height: 400px;
+	}
+</style>
