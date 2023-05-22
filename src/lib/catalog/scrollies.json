@@ -1,15 +1,5 @@
 [
 	{
-    "id": 0,
-    "author": "Ran Li",
-    "date": "May 22, 2023",
-    "name": "dev page - ran",
-    "desc": "Dev page for current development",
-    "tech": ["dev"],
-    "path": "./scrollies/0-ran",
-    "img_path": "https://github.com/Drexel-UHC/interactivity/blob/main/src/lib/images/dev-icon.png?raw=true"
-  } ,
-	{
     "id": 1,
     "author": "Ran Li",
     "date": "May 21, 2023",
@@ -27,7 +17,7 @@
     "desc": "Basic scrolly utilizing @puddingViz Scrolly component step detection, tweened values for data transitions and basic outputs to show scrolling progress.",
     "tech": ["@puddingViz","Scatter plot","Responsive"],
     "path": "./scrollies/2-ran-first",
-    "img_path": "https://github.com/Drexel-UHC/interactivity/blob/main/src/lib/images/scrolly-1-img.png?raw=true"
+    "img_path": "https://github.com/Drexel-UHC/interactivity/blob/main/src/lib/images/scrolly-2-img.JPG?raw=true"
   }  ,
 	{
     "id": 3,
