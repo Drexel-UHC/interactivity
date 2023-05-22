@@ -20,8 +20,7 @@
 
 <div class="container">
 	<iframe class="repl-iframe" src={replUrl} />
-
-	<!-- <div class="buttons">
+	<div class="buttons">
 		<button on:click={() => updateStep('1')} type="button" class="btn btn-sm variant-filled"
 			>Step 1</button
 		>
@@ -36,14 +35,17 @@
 				<circle cx={x * 20} cy={y * 20} r="5" />
 			{/each}
 		</svg>
-	</div> -->
+	</div>
 </div>
 
 <style>
 	.repl-iframe {
 		width: 90%;
 		height: 500px;
-		border: none;
+	}
+
+	.buttons {
+		margin-top: 1rem;
 	}
 
 	.container {
