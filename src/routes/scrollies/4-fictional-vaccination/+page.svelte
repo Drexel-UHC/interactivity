@@ -1,5 +1,7 @@
 <script>
 	import data_all from './data.json';
+	import text_all from './text.json';
+	import Scroll from './Scrolly.svelte';
 	import { scaleLinear, scaleLog } from 'd3-scale';
 	import { tweened } from 'svelte/motion';
 
@@ -15,38 +17,84 @@
 		.domain([0, Math.max(...yValues) * 1.1])
 		.range([height, 0]);
 
-	// Initialize Tweened data
+	// Steps
+	let currentStep;
 	const allSteps = [...new Set(data_all.map((d) => d.step))];
-	let step = 1;
-	let data = data_all.filter((d) => d.step == step);
-	const tweenedData = tweened(data, { duration: 100 });
+	const steps = text_all.filter((i) => allSteps.includes(i.step)).map((i) => i.text);
 
-	$: {
-		data = data_all.filter((d) => d.step == step);
-		tweenedData.set(data);
+	//  Tweened data
+
+	const tweenedData = tweened(
+		data_all.filter((d) => d.step == 0),
+		{ duration: 100 }
+	);
+
+	$: if (currentStep == 0) {
+		tweenedData.set(data_all.filter((d) => d.step == 0));
+	} else if (currentStep == 1) {
+		tweenedData.set(data_all.filter((d) => d.step == 1));
+	} else if (currentStep == 2) {
+		tweenedData.set(data_all.filter((d) => d.step == 2));
 	}
 </script>
 
-<div class="buttons">
-	{#each allSteps as s (s)}
-		<button on:click={() => (step = s)} type="button" class="btn btn-sm variant-filled">
-			Step {s}
-		</button>
-	{/each}
-</div>
+<section>
+	<!-- The chart in the background, which is sticky thanks to CSS below -->
+	<div class="chart">
+		<svg {width} {height}>
+			{#each $tweenedData as { x, y, id, realm } (realm)}
+				<circle cx={xScale(x)} cy={yScale(y)} r="5" />
+			{/each}
+		</svg>
+	</div>
 
-<div class="chart">
-	<svg {width} {height}>
-		{#each $tweenedData as { x, y, id } (id)}
-			<circle cx={xScale(x)} cy={yScale(y)} r="5" />
+	<!-- The scrolling container which includes each of the text elements -->
+	<Scroll bind:value={currentStep}>
+		{#each steps as text, i}
+			<div class="step" class:active={currentStep === i}>
+				<div class="step-content">
+					{@html text}
+				</div>
+			</div>
 		{/each}
-	</svg>
-</div>
+	</Scroll>
+</section>
 
 <style>
+	/* The fixed chart */
 	.chart {
 		background: whitesmoke;
 		width: 400px;
 		height: 400px;
+		box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+		position: sticky;
+		top: 10%;
+		margin: auto;
+	}
+
+	/* Scrollytelling CSS */
+	.step {
+		height: 80vh;
+		display: flex;
+		place-items: center;
+		justify-content: center;
+	}
+
+	.step-content {
+		background: whitesmoke;
+		color: #ccc;
+		border-radius: 5px;
+		padding: 0.5rem 1rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		transition: background 500ms ease;
+		box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+		z-index: 10;
+	}
+
+	.step.active .step-content {
+		background: grey;
+		color: white;
 	}
 </style>

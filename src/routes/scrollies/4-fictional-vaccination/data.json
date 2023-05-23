@@ -1,105 +1,105 @@
 [
   {
     "id": 1,
-    "step": 1,
+    "step": 0,
     "realm": "Arendelle",
     "x": 10,
     "y": 3000000
   },
   {
     "id": 2,
-    "step": 1,
+    "step": 0,
     "realm": "Agrabah",
     "x": 5,
     "y": 2000000
   },
   {
     "id": 3,
-    "step": 1,
+    "step": 0,
     "realm": "Atlantica",
     "x": 3,
     "y": 5000000
   },
   {
     "id": 4,
-    "step": 1,
+    "step": 0,
     "realm": "Corona",
     "x": 8,
     "y": 500000
   },
   {
     "id": 5,
-    "step": 1,
+    "step": 0,
     "realm": "Zootopia",
     "x": 4,
     "y": 4500000
   },
   {
     "id": 6,
-    "step": 2,
+    "step": 1,
     "realm": "Arendelle",
     "x": 50,
     "y": 2000000
   },
   {
     "id": 7,
-    "step": 2,
+    "step": 1,
     "realm": "Agrabah",
     "x": 35,
     "y": 1500000
   },
   {
     "id": 8,
-    "step": 2,
+    "step": 1,
     "realm": "Atlantica",
     "x": 20,
     "y": 4000000
   },
   {
     "id": 9,
-    "step": 2,
+    "step": 1,
     "realm": "Corona",
     "x": 45,
     "y": 300000
   },
   {
     "id": 10,
-    "step": 2,
+    "step": 1,
     "realm": "Zootopia",
     "x": 30,
     "y": 3500000
   },
   {
     "id": 11,
-    "step": 3,
+    "step": 2,
     "realm": "Arendelle",
     "x": 70,
     "y": 1000000
   },
   {
     "id": 12,
-    "step": 3,
+    "step": 2,
     "realm": "Agrabah",
     "x": 65,
     "y": 800000
   },
   {
     "id": 13,
-    "step": 3,
+    "step": 2,
     "realm": "Atlantica",
     "x": 45,
     "y": 2000000
   },
   {
     "id": 14,
-    "step": 3,
+    "step": 2,
     "realm": "Corona",
     "x": 65,
     "y": 150000
   },
   {
     "id": 15,
-    "step": 3,
+    "step": 2,
     "realm": "Zootopia",
     "x": 50,
     "y": 2000000
