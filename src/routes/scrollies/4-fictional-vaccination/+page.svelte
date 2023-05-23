@@ -1,31 +1,48 @@
 <script>
-	import data from './data.json';
+	import data_all from './data.json';
 	import { scaleLinear, scaleLog } from 'd3-scale';
 	import { tweened } from 'svelte/motion';
-	import { cubicInOut } from 'svelte/easing';
 
 	// D3 Scales
 	let width = 400;
 	let height = 400;
-	let xValues = data.map((d) => d.x);
-	let yValues = data.map((d) => d.y);
-	let xScale = scaleLog()
-		.domain([0.1, Math.max(...xValues) * 1.1])
+	let xValues = data_all.map((d) => d.x);
+	let yValues = data_all.map((d) => d.y);
+	let xScale = scaleLinear()
+		.domain([0, Math.max(...xValues) * 1.1])
 		.range([0, width]);
-	let yScale = scaleLog()
-		.domain([0.1, Math.max(...yValues) * 1.1])
+	let yScale = scaleLinear()
+		.domain([0, Math.max(...yValues) * 1.1])
 		.range([height, 0]);
 
-	// Tween
-	let data1 = data.filter((d) => d.step == '1');
-	const tweenedData = tweened(data1, { duration: 500, easing: cubicInOut });
+	// Initialize Tweened data
+	const allSteps = [...new Set(data_all.map((d) => d.step))];
+	let step = 1;
+	let data = data_all.filter((d) => d.step == step);
+	const tweenedData = tweened(data, { duration: 100 });
+
+	$: {
+		data = data_all.filter((d) => d.step == step);
+		tweenedData.set(data);
+	}
 </script>
 
+<h2>Step: {step}</h2>
+<h2>X min max: {Math.min(...xValues)} - {Math.max(...xValues)}</h2>
+<h2>Y min max: {Math.min(...yValues)} - {Math.max(...yValues)}</h2>
 <div class="container">
+	<div class="buttons">
+		{#each allSteps as s (s)}
+			<button on:click={() => (step = s)} type="button" class="btn btn-sm variant-filled">
+				Step {s}
+			</button>
+		{/each}
+	</div>
+
 	<div class="chart">
 		<svg {width} {height}>
-			{#each tweenedData as d}
-				<circle cx={xScale(d.x)} cy={yScale(d.y)} r={15} fill="steelblue" stroke="#000000" />
+			{#each $tweenedData as { x, y, id } (id)}
+				<circle cx={xScale(x)} cy={yScale(y)} r="5" />
 			{/each}
 		</svg>
 	</div>
@@ -34,10 +51,12 @@
 <style>
 	.container {
 		display: flex;
+		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		height: 100vh;
+		margin-top: 1rem;
 	}
+
 	.chart {
 		background: whitesmoke;
 		width: 400px;
