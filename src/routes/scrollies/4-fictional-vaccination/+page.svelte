@@ -27,36 +27,23 @@
 	}
 </script>
 
-<h2>Step: {step}</h2>
-<h2>X min max: {Math.min(...xValues)} - {Math.max(...xValues)}</h2>
-<h2>Y min max: {Math.min(...yValues)} - {Math.max(...yValues)}</h2>
-<div class="container">
-	<div class="buttons">
-		{#each allSteps as s (s)}
-			<button on:click={() => (step = s)} type="button" class="btn btn-sm variant-filled">
-				Step {s}
-			</button>
-		{/each}
-	</div>
+<div class="buttons">
+	{#each allSteps as s (s)}
+		<button on:click={() => (step = s)} type="button" class="btn btn-sm variant-filled">
+			Step {s}
+		</button>
+	{/each}
+</div>
 
-	<div class="chart">
-		<svg {width} {height}>
-			{#each $tweenedData as { x, y, id } (id)}
-				<circle cx={xScale(x)} cy={yScale(y)} r="5" />
-			{/each}
-		</svg>
-	</div>
+<div class="chart">
+	<svg {width} {height}>
+		{#each $tweenedData as { x, y, id } (id)}
+			<circle cx={xScale(x)} cy={yScale(y)} r="5" />
+		{/each}
+	</svg>
 </div>
 
 <style>
-	.container {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		margin-top: 1rem;
-	}
-
 	.chart {
 		background: whitesmoke;
 		width: 400px;
