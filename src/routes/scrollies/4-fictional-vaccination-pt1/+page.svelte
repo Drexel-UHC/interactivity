@@ -42,7 +42,7 @@
 	<!-- The chart in the background, which is sticky thanks to CSS below -->
 	<div class="chart">
 		<svg {width} {height}>
-			{#each $tweenedData as { x, y, id, realm } (realm)}
+			{#each $tweenedData as { x, y, id } (id)}
 				<circle cx={xScale(x)} cy={yScale(y)} r="5" />
 			{/each}
 		</svg>
