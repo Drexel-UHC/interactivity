@@ -1,5 +1,7 @@
 <script>
 	import data from '../../lib/catalog/scrollies.json';
+	data.sort((a, b) => new Date(b.date) - new Date(a.date));
+	console.log(data);
 	import Item from '../../lib/catalog/Item.svelte';
 	import { ListBox, ListBoxItem } from '@skeletonlabs/skeleton';
 
