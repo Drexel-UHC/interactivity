@@ -1,53 +1,92 @@
 [
-	{
+  {
     "id": 1,
-    "author": "Ran Li",
+    "author": "",
     "date": "May 21, 2023",
     "name": "Connor Rothschild Scrolly Demo",
     "desc": "Reproduction of Connor Rothschild's (Moksha Data Studio)'s demo use case of Russel's <Scrolly/> svelte component; explaination can of code can be found here: https://www.connorrothschild.com/post/svelte-scrollytelling. ",
-    "tech": ["@puddingViz","Scatter plot","Responsive"],
+    "tech": [
+      "@puddingViz",
+      "Scatter plot",
+      "Responsive"
+    ],
     "path": "./scrollies/1-connor",
     "img_path": "https://github.com/Drexel-UHC/interactivity/blob/main/src/lib/images/scrolly-1-img.png?raw=true"
-  } ,
-	{
+  },
+  {
     "id": 2,
-    "author": "Ran Li",
+    "author": "",
     "date": "May 22, 2023",
-    "name": "Ran first scrolly",
+    "name": "Trying out @puddingViz Scrolly component",
     "desc": "Basic scrolly utilizing @puddingViz Scrolly component step detection, tweened values for data transitions and basic outputs to show scrolling progress.",
-    "tech": ["Learning"],
+    "tech": [
+      "Learning"
+    ],
     "path": "./scrollies/2-ran-first",
     "img_path": "https://github.com/Drexel-UHC/interactivity/blob/main/src/lib/images/scrolly-2-img.JPG?raw=true"
-  } ,
-	{
+  },
+  {
     "id": 3,
-    "author": "Ran Li",
+    "author": "",
     "date": "May 22, 2023",
     "name": "Tweened Scatter",
     "desc": "Figuring out to how to tween a two dimensional data structure. This is a key component in developing tweened scatter plots.",
-    "tech": ["Scatter plot","Learning"],
+    "tech": [
+      "Scatter plot",
+      "Learning"
+    ],
     "path": "./scrollies/3-tweened-scatter",
     "img_path": "https://github.com/Drexel-UHC/interactivity/blob/main/src/lib/images/scrolly-3-tweened-scatter-poc.JPG?raw=true"
-  }  ,
-	{
+  },
+  {
     "id": 4,
-    "author": "Ran Li",
+    "author": "",
     "date": "May 22, 2023",
     "name": "Basic Vaccination Scrolly (Pt1)",
     "desc": "This is to adapt Connor's guide to a ChatGPT prompted scrolly. The goal is to learn put together a basic prompt and utilize the scrolly component, D3 scales and tweened values to create a scrolly that shows the effect of vaccination on a fictional disease. Note this is basic scrolly without best practices e.g. responsiveness.",
-    "tech": ["Scatter plot","Learning"],
+    "tech": [
+      "Scatter plot",
+      "Learning"
+    ],
     "path": "./scrollies/4-fictional-vaccination-pt1",
     "img_path": "https://github.com/Drexel-UHC/interactivity/blob/main/src/lib/images/scrolly-4-fictional-vaccination-pt1.JPG?raw=true"
-  } ,
+
+  }  ,
   {
     "id": 5,
-    "author": "Ran Li",
+    "author": "",
+    "date": "May 26, 2023",
+    "name": "Exploring the Influence of Community Factors on Severe COVID-19: A Study in the Philadelphia Region",
+    "desc": "The study quantifies the impact of community factors, such as poverty and healthcare access, on the likelihood of developing severe COVID-19 requiring hospitalization, using community environment data from the Census and hospitalization records from HealthShare Exchange in the Philadelphia Region",
+    "tech": [
+      "Spatial",
+      "Mockup"
+    ],
+    "path": "https://mockup-uhc-nbhd-disadv-covid19.netlify.app/",
+    "img_path": "https://github.com/Drexel-UHC/interactivity/blob/main/src/lib/images/mocukup-rwjf.JPG?raw=true"
+  },
+  {
+    "id": 6,
+    "author": "",
+    "date": "May 30, 2023",
+    "name": "MAUP Scrolly",
+    "desc": "We adopt a scrolly that uses animation to transition from maps to plots to explore how interactivity can be used to convey the  Modifiable Areal Unit Problem (MAUP). This particular portofolio item can be reused to explore how the choice of spatial units can shape data interpretation, revealing detailed disparities, and emphasizing the necessity of understanding scale implications for better decision-making.",
+    "tech": [
+      "MAUP",
+      "Spatial",
+      "Mockup"
+    ],
+    "path": "https://mockup-uhc-graphics-maup.netlify.app/",
+    "img_path": "https://github.com/Drexel-UHC/interactivity/blob/main/src/lib/images/mockup-maup.JPG?raw=true"
+  } ,
+  {
+    "id": 7,
+    "author": "",
     "date": "june 13, 2023",
     "name": "Basic test Scrolly (Pt1)",
     "desc": "This is to adapt Connor's guide to a ChatGPT prompted scrolly. The goal is to learn put together a basic prompt and utilize the scrolly component, D3 scales and tweened values to create a scrolly that shows the effect of vaccination on a fictional disease. Note this is basic scrolly without best practices e.g. responsiveness.",
     "tech": ["Scatter plot","Learning"],
     "path": "./scrollies/5-test-anuj",
     "img_path": "https://github.com/Drexel-UHC/interactivity/blob/main/src/lib/images/scrolly-4-fictional-vaccination-pt1.JPG?raw=true"
-  } 
-
+  }
 ]
